@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Möllendorff AI</title>
+<meta name="description" content="Open-source tools for finance and AI agents. Forge: financial models as plain text, calculated the same way every time.">
+<meta name="color-scheme" content="light dark">
+<style>
+:root {
+  --bg: #ECEFEB; --surface: #FFFFFF; --ink: #162022; --muted: #5A6663; --line: #D3D9D4;
+  --accent: #1E6B61; --accent-ink: #FFFFFF; --accent-soft: #DCEBE6;
+  --f-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --f-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #0F1514; --surface: #18201F; --ink: #E4EBE8; --muted: #95A39F; --line: #2A3532;
+          --accent: #5BBFAE; --accent-ink: #08201C; --accent-soft: #1C3530; }
+}
+* { box-sizing: border-box }
+html { -webkit-text-size-adjust: 100% }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 17px; line-height: 1.55 }
+a { color: var(--accent) }
+.wrap { max-width: 980px; margin: 0 auto; padding: 0 20px }
+header { padding: 28px 0 0 }
+.mark { font-weight: 700; letter-spacing: -0.01em; font-size: 18px }
+.mark span { color: var(--muted); font-weight: 500 }
+.hero { display: grid; gap: 36px; align-items: center; padding: 48px 0 56px }
+@media (min-width: 820px) { .hero { grid-template-columns: 1.2fr 0.8fr; padding: 72px 0 80px } }
+h1 { font-size: clamp(32px, 6vw, 48px); line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 16px }
+.lead { font-size: 19px; color: var(--muted); margin: 0 0 28px; max-width: 34em }
+.cta { display: flex; flex-wrap: wrap; gap: 12px }
+.btn { display: inline-block; padding: 12px 20px; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: 16px; border: 1px solid var(--line); color: var(--ink); background: var(--surface) }
+.btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent) }
+.phone { justify-self: center; width: min(280px, 72vw); border-radius: 28px; border: 1px solid var(--line); box-shadow: 0 18px 50px rgba(0,0,0,.14); display: block; height: auto }
+section { padding: 40px 0; border-top: 1px solid var(--line) }
+h2 { font-size: 22px; margin: 0 0 18px; letter-spacing: -0.01em }
+.grid { display: grid; gap: 16px }
+@media (min-width: 720px) { .grid { grid-template-columns: repeat(3, 1fr) } }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 20px }
+.card h3 { margin: 0 0 6px; font-size: 17px }
+.card p { margin: 0; color: var(--muted); font-size: 15.5px }
+.project { display: grid; gap: 6px; padding: 18px 0 }
+.project + .project { border-top: 1px solid var(--line) }
+.project h3 { margin: 0; font-size: 19px }
+.project p { margin: 0; color: var(--muted); max-width: 40em }
+.project .links { font-size: 15.5px }
+code { font-family: var(--f-mono); font-size: .9em; background: var(--accent-soft); padding: 1px 5px; border-radius: 5px }
+footer { padding: 32px 0 48px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14.5px }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><div class="mark">Möllendorff AI <span>· open source</span></div></header>
+
+  <main>
+    <div class="hero">
+      <div>
+        <h1>Financial models you can read, diff and trust.</h1>
+        <p class="lead">Forge calculates a financial model written as plain text: 203 Excel-style functions, scenarios, Monte Carlo and more. People read it, AI agents write it, and it gives the same answer every time. Try it in your browser: nothing to install, nothing sent anywhere.</p>
+        <div class="cta">
+          <a class="btn primary" href="https://forge.mollendorff.ai/">Open Forge Studio</a>
+          <a class="btn" href="https://github.com/mollendorff-ai/forge">Forge on GitHub</a>
+        </div>
+      </div>
+      <img class="phone" src="img/studio-phone.jpg" width="600" height="1000" alt="Forge Studio on a phone: a bagel shop's year, with its inputs and results">
+    </div>
+
+    <section>
+      <h2>Why plain text</h2>
+      <div class="grid">
+        <div class="card"><h3>Readable</h3><p>A formula says <code>months.revenue</code>, not <code>B7:G42</code>. The model reviews and merges like code.</p></div>
+        <div class="card"><h3>Writable by AI</h3><p>An agent edits YAML and checks it with Forge's own tools, over MCP, instead of guessing at a spreadsheet.</p></div>
+        <div class="card"><h3>Checked, not trusted</h3><p>Functions are tested against Gnumeric, LibreOffice and R. Models still export to Excel.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <div class="project">
+        <h3>Forge</h3>
+        <p>A financial modeling engine in Rust: a command line, an MCP server for AI agents, and Forge Studio, which runs the same engine in your browser and works offline.</p>
+        <div class="links"><a href="https://forge.mollendorff.ai/">Studio</a> · <a href="https://github.com/mollendorff-ai/forge">GitHub</a></div>
+      </div>
+      <div class="project">
+        <h3>Ref</h3>
+        <p>Turns a web page into clean JSON for an AI agent, and can reuse a session you signed in to yourself.</p>
+        <div class="links"><a href="https://github.com/mollendorff-ai/ref">GitHub</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Möllendorff AI. Everything here is open source and free; it is research and development, not a service.
+    This page sets no cookies and loads nothing from other sites.
+  </footer>
+</div>
+</body>
+</html>
