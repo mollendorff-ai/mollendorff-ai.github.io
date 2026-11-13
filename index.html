@@ -3,96 +3,172 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Möllendorff AI</title>
-<meta name="description" content="Open-source tools for finance and AI agents. Forge: financial models as plain text, calculated the same way every time.">
+<title>Möllendorff AI: financial models as plain text</title>
+<meta name="description" content="Forge calculates financial models written as plain text: readable by people, writable by AI, calculated the same way every time. Open source. Try it in your browser.">
+<link rel="canonical" href="https://mollendorff.ai/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mollendorff.ai/">
+<meta property="og:title" content="Financial models as plain text">
+<meta property="og:description" content="Forge calculates financial models written as plain text: readable by people, writable by AI, calculated the same way every time.">
+<meta property="og:image" content="https://mollendorff.ai/img/card.png">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ECEFEB" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F1514" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="img/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <style>
 :root {
-  --bg: #ECEFEB; --surface: #FFFFFF; --ink: #162022; --muted: #5A6663; --line: #D3D9D4;
-  --accent: #1E6B61; --accent-ink: #FFFFFF; --accent-soft: #DCEBE6;
-  --f-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --f-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --bg: #ECEFEB; --paper: #FFFFFF; --ink: #162022; --muted: #55615E; --line: #D3D9D4;
+  --accent: #1E6B61; --accent-ink: #FFFFFF; --ember: #A24E1E; --result: #1E6B61; --margin: #F5F7F4;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
 }
 @media (prefers-color-scheme: dark) {
-  :root { --bg: #0F1514; --surface: #18201F; --ink: #E4EBE8; --muted: #95A39F; --line: #2A3532;
-          --accent: #5BBFAE; --accent-ink: #08201C; --accent-soft: #1C3530; }
+  :root { --bg: #0F1514; --paper: #18201F; --ink: #E4EBE8; --muted: #9AA8A4; --line: #2A3532;
+          --accent: #5BBFAE; --accent-ink: #08201C; --ember: #E58C55; --result: #5BBFAE; --margin: #131A19; }
 }
 * { box-sizing: border-box }
 html { -webkit-text-size-adjust: 100% }
-body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 17px; line-height: 1.55 }
-a { color: var(--accent) }
-.wrap { max-width: 980px; margin: 0 auto; padding: 0 20px }
-header { padding: 28px 0 0 }
-.mark { font-weight: 700; letter-spacing: -0.01em; font-size: 18px }
-.mark span { color: var(--muted); font-weight: 500 }
-.hero { display: grid; gap: 36px; align-items: center; padding: 48px 0 56px }
-@media (min-width: 820px) { .hero { grid-template-columns: 1.2fr 0.8fr; padding: 72px 0 80px } }
-h1 { font-size: clamp(32px, 6vw, 48px); line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 16px }
-.lead { font-size: 19px; color: var(--muted); margin: 0 0 28px; max-width: 34em }
-.cta { display: flex; flex-wrap: wrap; gap: 12px }
-.btn { display: inline-block; padding: 12px 20px; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: 16px; border: 1px solid var(--line); color: var(--ink); background: var(--surface) }
-.btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent) }
-.phone { justify-self: center; width: min(280px, 72vw); border-radius: 28px; border: 1px solid var(--line); box-shadow: 0 18px 50px rgba(0,0,0,.14); display: block; height: auto }
-section { padding: 40px 0; border-top: 1px solid var(--line) }
-h2 { font-size: 22px; margin: 0 0 18px; letter-spacing: -0.01em }
-.grid { display: grid; gap: 16px }
-@media (min-width: 720px) { .grid { grid-template-columns: repeat(3, 1fr) } }
-.card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 20px }
-.card h3 { margin: 0 0 6px; font-size: 17px }
-.card p { margin: 0; color: var(--muted); font-size: 15.5px }
-.project { display: grid; gap: 6px; padding: 18px 0 }
-.project + .project { border-top: 1px solid var(--line) }
-.project h3 { margin: 0; font-size: 19px }
-.project p { margin: 0; color: var(--muted); max-width: 40em }
-.project .links { font-size: 15.5px }
-code { font-family: var(--f-mono); font-size: .9em; background: var(--accent-soft); padding: 1px 5px; border-radius: 5px }
-footer { padding: 32px 0 48px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14.5px }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.55 }
+a { color: var(--accent); text-underline-offset: 3px }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px }
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px }
+
+.top { display: flex; justify-content: space-between; align-items: baseline; padding: 24px 0 0; font-size: 16px }
+.top strong { font-size: 18px; letter-spacing: -0.01em }
+.top a { color: var(--muted); text-decoration: none }
+.top a:hover { color: var(--ink) }
+
+.hero { display: grid; gap: 40px; padding: 56px 0 64px; align-items: center }
+@media (min-width: 900px) { .hero { grid-template-columns: 1fr 1fr; gap: 56px; padding: 88px 0 96px } }
+h1 { font-size: clamp(36px, 7vw, 58px); line-height: 1.04; letter-spacing: -0.03em; margin: 0 0 20px; font-weight: 750 }
+.lead { font-size: 20px; line-height: 1.45; color: var(--muted); margin: 0 0 30px; max-width: 30em }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center }
+.btn { display: inline-block; padding: 13px 22px; border-radius: 10px; text-decoration: none; font-weight: 650; font-size: 16px; background: var(--accent); color: var(--accent-ink) }
+.btn:hover { filter: brightness(1.08) }
+.quiet { font-weight: 600; font-size: 16px; padding: 13px 6px }
+.fine { margin: 16px 0 0; font-size: 14.5px; color: var(--muted) }
+
+/* The model: a text file on the left, what Forge calculates in the margin */
+.sheet { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; margin: 0 }
+.sheet figcaption { display: flex; justify-content: space-between; gap: 12px; padding: 10px 16px; border-bottom: 1px solid var(--line); font-family: var(--mono); font-size: 12.5px; color: var(--muted) }
+.rows { margin: 0; padding: 14px 0; font-family: var(--mono); font-size: 14px; line-height: 1.75 }
+@media (max-width: 400px) { .rows { font-size: 12.5px } }
+.row { display: grid; grid-template-columns: 1fr; padding: 0 16px }
+.row code { font: inherit; white-space: pre }
+.row .out { color: var(--result); font-weight: 650; white-space: pre; font-variant-numeric: tabular-nums }
+.row.calc { background: var(--margin) }
+.row .out::before { content: "  = "; opacity: .55; font-weight: 400 }
+.row .out { padding-bottom: 4px }
+.row .out.deep::before { content: "    = " }
+.k { color: var(--ink) } .s { color: var(--ember) } .n { color: var(--muted) }
+
+section { padding: 56px 0; border-top: 1px solid var(--line) }
+h2 { font-size: clamp(24px, 4vw, 30px); line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 14px }
+section > p, .col > p { color: var(--muted); max-width: 36em; margin: 0 0 14px }
+
+.studio { display: grid; gap: 36px; align-items: center }
+@media (min-width: 820px) { .studio { grid-template-columns: 300px 1fr; gap: 64px } }
+.studio img { width: min(280px, 78vw); height: auto; display: block; border-radius: 22px; border: 1px solid var(--line); justify-self: center }
+.facts { margin: 18px 0 26px; padding: 0; list-style: none; max-width: 34em }
+.facts li { padding: 10px 0; border-top: 1px solid var(--line) }
+.facts li:last-child { border-bottom: 1px solid var(--line) }
+.facts b { font-weight: 650 }
+
+.ways { display: grid; gap: 0; margin: 22px 0 0 }
+.way { display: grid; gap: 4px 28px; padding: 18px 0; border-top: 1px solid var(--line) }
+@media (min-width: 720px) { .way { grid-template-columns: 13em 1fr; align-items: baseline } }
+.way h3 { margin: 0; font-size: 17px }
+.way p { margin: 0; color: var(--muted) }
+.way code, p code { font-family: var(--mono); font-size: .88em; background: var(--paper); border: 1px solid var(--line); padding: 1px 6px; border-radius: 6px; white-space: nowrap }
+
+footer { padding: 28px 0 56px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14.5px }
+footer p { margin: 0 0 6px; max-width: 44em }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <header><div class="mark">Möllendorff AI <span>· open source</span></div></header>
+  <div class="top">
+    <strong>Möllendorff AI</strong>
+    <a href="https://github.com/mollendorff-ai">GitHub</a>
+  </div>
 
   <main>
     <div class="hero">
       <div>
-        <h1>Financial models you can read, diff and trust.</h1>
-        <p class="lead">Forge calculates a financial model written as plain text: 203 Excel-style functions, scenarios, Monte Carlo and more. People read it, AI agents write it, and it gives the same answer every time. Try it in your browser: nothing to install, nothing sent anywhere.</p>
-        <div class="cta">
-          <a class="btn primary" href="https://forge.mollendorff.ai/">Open Forge Studio</a>
-          <a class="btn" href="https://github.com/mollendorff-ai/forge">Forge on GitHub</a>
+        <h1>Financial models as plain text.</h1>
+        <p class="lead">Forge calculates a model you can read like a page: named inputs, formulas, tables. People can review it, AI agents can write it, and it gives the same answer every time.</p>
+        <div class="actions">
+          <a class="btn" href="https://forge.mollendorff.ai/">Open Forge Studio</a>
+          <a class="quiet" href="https://github.com/mollendorff-ai/forge">Forge on GitHub</a>
         </div>
+        <p class="fine">Free and open source. Runs in your browser, with nothing to install.</p>
       </div>
-      <img class="phone" src="img/studio-phone.jpg" width="600" height="1000" alt="Forge Studio on a phone: a bagel shop's year, with its inputs and results">
+
+      <figure class="sheet" aria-label="A small Forge model and the numbers Forge calculates from it">
+        <figcaption><span>shop.yaml</span><span>forge calculate</span></figcaption>
+        <div class="rows">
+          <div class="row"><code><span class="k">_forge_version:</span> <span class="n">"5.1.0"</span></code></div>
+          <div class="row"><code> </code></div>
+          <div class="row"><code><span class="k">shop:</span></code></div>
+          <div class="row"><code>  <span class="k">price:</span> <span class="n">16</span></code></div>
+          <div class="row"><code> </code></div>
+          <div class="row"><code><span class="k">months:</span></code></div>
+          <div class="row"><code>  <span class="k">month:</span> <span class="n">[Jan, Feb, Mar]</span></code></div>
+          <div class="row"><code>  <span class="k">dozens:</span> <span class="n">[1400, 1650, 1900]</span></code></div>
+          <div class="row calc"><code>  <span class="k">revenue:</span> <span class="s">"=dozens * shop.price"</span></code><span class="out">22,400  26,400  30,400</span></div>
+          <div class="row"><code> </code></div>
+          <div class="row"><code><span class="k">quarter:</span></code></div>
+          <div class="row"><code>  <span class="k">revenue:</span></code></div>
+          <div class="row calc"><code>    <span class="k">formula:</span> <span class="s">"=SUM(months.revenue)"</span></code><span class="out deep">79,200</span></div>
+        </div>
+      </figure>
     </div>
 
     <section>
-      <h2>Why plain text</h2>
-      <div class="grid">
-        <div class="card"><h3>Readable</h3><p>A formula says <code>months.revenue</code>, not <code>B7:G42</code>. The model reviews and merges like code.</p></div>
-        <div class="card"><h3>Writable by AI</h3><p>An agent edits YAML and checks it with Forge's own tools, over MCP, instead of guessing at a spreadsheet.</p></div>
-        <div class="card"><h3>Checked, not trusted</h3><p>Functions are tested against Gnumeric, LibreOffice and R. Models still export to Excel.</p></div>
+      <div class="studio">
+        <img src="img/studio-phone.jpg" width="600" height="1000" loading="lazy" alt="Forge Studio on a phone, showing a bagel shop's year: revenue, profit and margin, each with its formula">
+        <div class="col">
+          <h2>Try it right now, even on a phone.</h2>
+          <p>Forge Studio is the whole engine running in a web page. Open an example, change a number, and watch the model recalculate. You can open your own YAML or Excel file too.</p>
+          <ul class="facts">
+            <li><b>Your model stays on your device.</b> There is no server doing the work, no account and no cookies.</li>
+            <li><b>It works offline.</b> After the first visit it opens without a connection, and it can sit on your Home Screen like an app.</li>
+            <li><b>It is the real engine.</b> The page calculates nothing itself; every number comes from Forge.</li>
+          </ul>
+          <a class="btn" href="https://forge.mollendorff.ai/">Open Forge Studio</a>
+        </div>
       </div>
     </section>
 
     <section>
-      <h2>Projects</h2>
-      <div class="project">
-        <h3>Forge</h3>
-        <p>A financial modeling engine in Rust: a command line, an MCP server for AI agents, and Forge Studio, which runs the same engine in your browser and works offline.</p>
-        <div class="links"><a href="https://forge.mollendorff.ai/">Studio</a> · <a href="https://github.com/mollendorff-ai/forge">GitHub</a></div>
+      <h2>One engine, three ways in.</h2>
+      <p>Forge is written in Rust. It reads a model in YAML and calculates it with more than 200 Excel-style functions, plus scenarios, Monte Carlo simulation, tornado charts and decision trees. It exports to Excel and imports from it.</p>
+      <div class="ways">
+        <div class="way"><h3>In your browser</h3><p><a href="https://forge.mollendorff.ai/">Forge Studio</a>, made for a phone, with nothing to install.</p></div>
+        <div class="way"><h3>On the command line</h3><p><code>forge calculate model.yaml</code> on macOS, Linux or Windows. The <a href="https://github.com/mollendorff-ai/forge#quick-start">quick start</a> has the install steps.</p></div>
+        <div class="way"><h3>For AI agents</h3><p><code>forge mcp</code> gives an agent 20 tools over the Model Context Protocol, so it checks its numbers with Forge instead of guessing them.</p></div>
       </div>
-      <div class="project">
-        <h3>Ref</h3>
-        <p>Turns a web page into clean JSON for an AI agent, and can reuse a session you signed in to yourself.</p>
-        <div class="links"><a href="https://github.com/mollendorff-ai/ref">GitHub</a></div>
+    </section>
+
+    <section>
+      <h2>Checked, not trusted.</h2>
+      <p>A calculator for money has to be right. More than 1,400 formula cases compare Forge with Gnumeric and LibreOffice, and the simulations and statistics are compared with R. The tests live in the repository and run on every change.</p>
+      <p>What does not work yet is <a href="https://github.com/mollendorff-ai/forge#status-and-known-limitations">listed in the README</a>, not hidden. Forge 10 is a release candidate.</p>
+    </section>
+
+    <section>
+      <h2>Also from Möllendorff AI</h2>
+      <div class="ways">
+        <div class="way"><h3><a href="https://github.com/mollendorff-ai/ref">Ref</a></h3><p>Turns a web page into clean JSON for an AI agent, and can reuse a session you signed in to yourself.</p></div>
       </div>
     </section>
   </main>
 
   <footer>
-    Möllendorff AI. Everything here is open source and free; it is research and development, not a service.
-    This page sets no cookies and loads nothing from other sites.
+    <p>Möllendorff AI builds open-source tools for finance and AI agents. This is research and development, offered free and without warranty; it is not a service.</p>
+    <p>This page sets no cookies, runs no scripts and loads nothing from other sites.</p>
   </footer>
 </div>
 </body>
