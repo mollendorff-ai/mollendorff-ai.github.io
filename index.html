@@ -6,6 +6,9 @@
 <title>Möllendorff AI: financial models as plain text</title>
 <meta name="description" content="Forge calculates financial models written as plain text: readable by people, writable by AI, calculated the same way every time. Open source. Try it in your browser.">
 <link rel="canonical" href="https://mollendorff.ai/">
+<link rel="alternate" hreflang="en" href="https://mollendorff.ai/">
+<link rel="alternate" hreflang="fr" href="https://mollendorff.ai/fr/">
+<link rel="alternate" hreflang="x-default" href="https://mollendorff.ai/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://mollendorff.ai/">
 <meta property="og:title" content="Financial models as plain text">
@@ -37,11 +40,13 @@ a { color: var(--accent); text-underline-offset: 3px }
 
 .top { display: flex; justify-content: space-between; align-items: baseline; padding: 24px 0 0; font-size: 16px }
 .top strong { font-size: 18px; letter-spacing: -0.01em }
+.top nav { display: flex; gap: 20px }
 .top a { color: var(--muted); text-decoration: none }
 .top a:hover { color: var(--ink) }
 
 .hero { display: grid; gap: 40px; padding: 56px 0 64px; align-items: center }
 @media (min-width: 900px) { .hero { grid-template-columns: 1fr 1fr; gap: 56px; padding: 88px 0 96px } }
+h1, h2 { text-wrap: balance }
 h1 { font-size: clamp(36px, 7vw, 58px); line-height: 1.04; letter-spacing: -0.03em; margin: 0 0 20px; font-weight: 750 }
 .lead { font-size: 20px; line-height: 1.45; color: var(--muted); margin: 0 0 30px; max-width: 30em }
 .actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center }
@@ -91,7 +96,7 @@ footer p { margin: 0 0 6px; max-width: 44em }
 <div class="wrap">
   <div class="top">
     <strong>Möllendorff AI</strong>
-    <a href="https://github.com/mollendorff-ai">GitHub</a>
+    <nav><a href="/fr/" lang="fr" hreflang="fr">Français</a><a href="https://github.com/mollendorff-ai">GitHub</a></nav>
   </div>
 
   <main>
