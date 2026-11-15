@@ -12,6 +12,8 @@
 
 - Then: `forge calculate forge-examples/bagel/bagel.yaml --dry-run` calculates the bagel-shop example. `forge --help` lists the commands; `forge mcp` is an MCP server with 20 tools.
 - A prompt to try it, and every other way to install it: https://github.com/mollendorff-ai/forge#try-it-with-your-ai
+- Tested prompts for an AI: https://github.com/mollendorff-ai/forge/blob/main/docs/PROMPTS.md
+- Four ways to use Forge, from a person alone to an AI pipeline (an agent writes the model, Forge validates and calculates, a person reviews), with the commands: https://github.com/mollendorff-ai/forge/blob/main/docs/WORKFLOWS.md
 - What works and what does not yet: https://github.com/mollendorff-ai/forge#status-and-known-limitations
 
 ## Also

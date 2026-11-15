@@ -88,6 +88,8 @@ section > p, .col > p { color: var(--muted); max-width: 36em; margin: 0 0 14px }
 .way p { margin: 0; color: var(--muted) }
 .way code, p code { font-family: var(--mono); font-size: .88em; background: var(--paper); border: 1px solid var(--line); padding: 1px 6px; border-radius: 6px; white-space: nowrap }
 
+.flow { margin: 28px 0 14px; max-width: 52em }
+.flow code { white-space: pre-wrap; overflow-wrap: anywhere; padding-left: 1.4em; text-indent: -1.4em; display: block }
 .prompt { display: block; width: 100%; max-width: 52em; min-height: 30em; margin: 18px 0 10px; padding: 16px 18px; background: var(--paper); color: var(--ink); border: 1px solid var(--line); border-radius: 12px; font-family: var(--mono); font-size: 13.5px; line-height: 1.6; white-space: pre-wrap; overflow-wrap: anywhere; resize: vertical }
 @media (max-width: 600px) { .prompt { font-size: 13px; padding: 14px; min-height: 56em } }
 footer { padding: 28px 0 56px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14.5px }
@@ -165,6 +167,28 @@ Then, with the forge binary it installed:
 If you cannot run commands here, say so plainly and do not invent any results. Point me to Forge Studio instead (https://forge.mollendorff.ai/), where I can open the bagel example myself in a browser.</textarea>
       <p class="fine">It names the project exactly, because “Forge” is a crowded name, and it installs the released binary rather than letting the AI build it for minutes. On a phone, tap the box, then Select All and Copy.</p>
       <p class="fine">It needs an AI that can run commands. We tried it on 15 November 2026: it worked on Claude and on Grok, free plans included; the free plans of ChatGPT and Gemini could not run it. If yours cannot, the prompt asks it to say so instead of making numbers up, and <a href="https://forge.mollendorff.ai/">Forge Studio</a> needs nothing but your browser.</p>
+    </section>
+
+    <section id="workflows">
+      <h2>From one person to a pipeline nobody watches.</h2>
+      <p>The same model and the same engine serve four ways of working. In each, whoever writes the model, Forge does the arithmetic, and every number traces back to a formula.</p>
+      <div class="ways">
+        <div class="way"><h3>A person alone</h3><p>A model is a text file. Change an input, run <code>forge calculate</code>, and the file shows every result it moved, ready to keep in git like code. No AI needed.</p></div>
+        <div class="way"><h3>A person with an AI</h3><p>The AI writes the model and explains it; Forge does every sum, so no number is the AI’s guess. <a href="https://github.com/mollendorff-ai/forge/blob/main/docs/PROMPTS.md">Five tested prompts</a> to start from.</p></div>
+        <div class="way"><h3>A pipeline without AI</h3><p>Forge as the calculator in a financial job, at month-end say: the same inputs give the same numbers, a failed formula stops the run, and results come out as JSON, CSV or a workbook.</p></div>
+        <div class="way"><h3>A pipeline with AI</h3><p>Where Forge is headed: an agent reads a new report and writes the model, Forge checks and calculates it, and a person reviews the change.</p></div>
+      </div>
+      <figure class="sheet flow" aria-label="An AI pipeline with Forge, step by step">
+        <figcaption><span>an AI pipeline</span><span>no person until the review</span></figcaption>
+        <div class="rows">
+          <div class="row"><code><span class="n">1</span> <span class="k">agent</span>  reads the quarter’s report, writes <span class="s">model.yaml</span></code></div>
+          <div class="row calc"><code><span class="n">2</span> <span class="k">forge</span>  validate, calculate</code><span class="out">refused? the reason goes back to step 1</span></div>
+          <div class="row calc"><code><span class="n">3</span> <span class="k">forge</span>  report --format json</code><span class="out">the numbers, from formulas</span></div>
+          <div class="row"><code><span class="n">4</span> <span class="k">agent</span>  opens a pull request</code></div>
+          <div class="row"><code><span class="n">5</span> <span class="k">person</span> reviews a diff of formulas and inputs, not a workbook to trust</code></div>
+        </div>
+      </figure>
+      <p class="fine">The first two ways have been run end to end by AI agents that had never seen Forge. The two pipelines are built from commands that work but have not yet been run whole; the AI one is to be shown with Sentinel, an earnings-analysis pipeline built on Forge. Each way, with its diagram and commands: <a href="https://github.com/mollendorff-ai/forge/blob/main/docs/WORKFLOWS.md">the workflows guide</a>.</p>
     </section>
 
     <section>
