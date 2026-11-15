@@ -88,8 +88,8 @@ section > p, .col > p { color: var(--muted); max-width: 36em; margin: 0 0 14px }
 .way p { margin: 0; color: var(--muted) }
 .way code, p code { font-family: var(--mono); font-size: .88em; background: var(--paper); border: 1px solid var(--line); padding: 1px 6px; border-radius: 6px; white-space: nowrap }
 
-.prompt { display: block; width: 100%; max-width: 52em; min-height: 25em; margin: 18px 0 10px; padding: 16px 18px; background: var(--paper); color: var(--ink); border: 1px solid var(--line); border-radius: 12px; font-family: var(--mono); font-size: 13.5px; line-height: 1.6; white-space: pre-wrap; overflow-wrap: anywhere; resize: vertical }
-@media (max-width: 600px) { .prompt { font-size: 13px; padding: 14px; min-height: 52em } }
+.prompt { display: block; width: 100%; max-width: 52em; min-height: 30em; margin: 18px 0 10px; padding: 16px 18px; background: var(--paper); color: var(--ink); border: 1px solid var(--line); border-radius: 12px; font-family: var(--mono); font-size: 13.5px; line-height: 1.6; white-space: pre-wrap; overflow-wrap: anywhere; resize: vertical }
+@media (max-width: 600px) { .prompt { font-size: 13px; padding: 14px; min-height: 56em } }
 footer { padding: 28px 0 56px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14.5px }
 footer p { margin: 0 0 6px; max-width: 44em }
 </style>
@@ -160,8 +160,11 @@ curl -fsSL https://raw.githubusercontent.com/mollendorff-ai/forge/main/install.s
 Then, with the forge binary it installed:
 1. Run `forge calculate forge-examples/bagel/bagel.yaml --dry-run` and tell me how the bagel shop's first year goes: revenue, profit and the worst month.
 2. Do not just compare with the numbers in Forge's README: those come from Forge too. Check two results yourself: recompute them from the inputs in bagel.yaml and costs.yaml with your own code, and say whether they agree.
-3. Change one input (the price per dozen, say), calculate again, and explain what changed and why.</textarea>
+3. Change one input (the price per dozen, say), calculate again, and explain what changed and why.
+
+If you cannot run commands here, say so plainly and do not invent any results. Point me to Forge Studio instead (https://forge.mollendorff.ai/), where I can open the bagel example myself in a browser.</textarea>
       <p class="fine">It names the project exactly, because “Forge” is a crowded name, and it installs the released binary rather than letting the AI build it for minutes. On a phone, tap the box, then Select All and Copy.</p>
+      <p class="fine">It needs an AI that can run commands. We tried it on 15 November 2026: it worked on Claude and on Grok, free plans included; the free plans of ChatGPT and Gemini could not run it. If yours cannot, the prompt asks it to say so instead of making numbers up, and <a href="https://forge.mollendorff.ai/">Forge Studio</a> needs nothing but your browser.</p>
     </section>
 
     <section>
