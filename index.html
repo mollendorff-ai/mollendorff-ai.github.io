@@ -88,6 +88,8 @@ section > p, .col > p { color: var(--muted); max-width: 36em; margin: 0 0 14px }
 .way p { margin: 0; color: var(--muted) }
 .way code, p code { font-family: var(--mono); font-size: .88em; background: var(--paper); border: 1px solid var(--line); padding: 1px 6px; border-radius: 6px; white-space: nowrap }
 
+.prompt { display: block; width: 100%; max-width: 52em; min-height: 30em; margin: 18px 0 10px; padding: 16px 18px; background: var(--paper); color: var(--ink); border: 1px solid var(--line); border-radius: 12px; font-family: var(--mono); font-size: 13.5px; line-height: 1.6; white-space: pre-wrap; overflow-wrap: anywhere; resize: vertical }
+@media (max-width: 600px) { .prompt { font-size: 13px; padding: 14px; min-height: 56em } }
 footer { padding: 28px 0 56px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14.5px }
 footer p { margin: 0 0 6px; max-width: 44em }
 </style>
@@ -106,6 +108,7 @@ footer p { margin: 0 0 6px; max-width: 44em }
         <p class="lead">Forge calculates a model you can read like a page: named inputs, formulas, tables. People can review it, AI agents can write it, and it gives the same answer every time.</p>
         <div class="actions">
           <a class="btn" href="https://forge.mollendorff.ai/">Open Forge Studio</a>
+          <a class="quiet" href="#ai">Let your AI try it</a>
           <a class="quiet" href="https://github.com/mollendorff-ai/forge">Forge on GitHub</a>
         </div>
         <p class="fine">Free and open source. Runs in your browser, with nothing to install.</p>
@@ -147,12 +150,29 @@ footer p { margin: 0 0 6px; max-width: 44em }
       </div>
     </section>
 
+    <section id="ai">
+      <h2>Or let your AI try it.</h2>
+      <p>Forge is made for AI agents. Paste this into Claude, ChatGPT, Grok or any AI that can run commands (a coding agent, or a chat with a code sandbox). It installs Forge in a few seconds, runs the bagel example, and checks two results with its own code instead of taking Forge’s word for them.</p>
+      <textarea class="prompt" readonly rows="14" aria-label="A prompt to paste into your AI" spellcheck="false">Try Forge, the financial-modelling engine from Möllendorff AI: https://github.com/mollendorff-ai/forge (Rust; the crate is mollendorff-forge). Do not build it from source. Install the release binary and its examples with:
+
+curl -fsSL https://raw.githubusercontent.com/mollendorff-ai/forge/main/install.sh | sh -s -- --examples
+
+Then, with the forge binary it installed:
+1. Run `forge calculate forge-examples/bagel/bagel.yaml --dry-run` and tell me how the bagel shop's first year goes: revenue, profit and the worst month.
+2. Do not just compare with the numbers in Forge's README: those come from Forge too. Check two results yourself: recompute them from the inputs in bagel.yaml and costs.yaml with your own code, and say whether they agree.
+3. Change one input (the price per dozen, say), calculate again, and explain what changed and why.
+
+If you cannot run commands here, say so plainly and do not invent any results. Point me to Forge Studio instead (https://forge.mollendorff.ai/), where I can open the bagel example myself in a browser.</textarea>
+      <p class="fine">It names the project exactly, because “Forge” is a crowded name, and it installs the released binary rather than letting the AI build it for minutes. On a phone, tap the box, then Select All and Copy.</p>
+      <p class="fine">It needs an AI that can run commands. We tried it on 15 November 2026: it worked on Claude and on Grok, free plans included; the free plans of ChatGPT and Gemini could not run it. If yours cannot, the prompt asks it to say so instead of making numbers up, and <a href="https://forge.mollendorff.ai/">Forge Studio</a> needs nothing but your browser.</p>
+    </section>
+
     <section>
       <h2>One engine, three ways in.</h2>
       <p>Forge is written in Rust. It reads a model in YAML and calculates it with more than 200 Excel-style functions, plus scenarios, Monte Carlo simulation, tornado charts and decision trees. It exports to Excel and imports from it.</p>
       <div class="ways">
         <div class="way"><h3>In your browser</h3><p><a href="https://forge.mollendorff.ai/">Forge Studio</a>, made for a phone, with nothing to install.</p></div>
-        <div class="way"><h3>On the command line</h3><p><code>forge calculate model.yaml</code> on macOS, Linux or Windows. The <a href="https://github.com/mollendorff-ai/forge#quick-start">quick start</a> has the install steps.</p></div>
+        <div class="way"><h3>On the command line</h3><p><code>forge calculate model.yaml</code> on macOS, Linux or Windows. One line installs it on macOS or Linux; the <a href="https://github.com/mollendorff-ai/forge#quick-start">quick start</a> has it, and the other ways.</p></div>
         <div class="way"><h3>For AI agents</h3><p><code>forge mcp</code> gives an agent 20 tools over the Model Context Protocol, so it checks its numbers with Forge instead of guessing them.</p></div>
       </div>
     </section>
