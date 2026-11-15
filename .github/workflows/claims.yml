@@ -1,0 +1,12 @@
+name: Claims
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "17 9 * * 1"
+jobs:
+  claims:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: scripts/check-claims.sh
