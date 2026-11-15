@@ -89,6 +89,8 @@ section > p, .col > p { color: var(--muted); max-width: 36em; margin: 0 0 14px }
 .way p { margin: 0; color: var(--muted) }
 .way code, p code { font-family: var(--mono); font-size: .88em; background: var(--paper); border: 1px solid var(--line); padding: 1px 6px; border-radius: 6px; white-space: nowrap }
 
+.flow { margin: 28px 0 14px; max-width: 52em }
+.flow code { white-space: pre-wrap; overflow-wrap: anywhere; padding-left: 1.4em; text-indent: -1.4em; display: block }
 .prompt { display: block; width: 100%; max-width: 52em; min-height: 30em; margin: 18px 0 10px; padding: 16px 18px; background: var(--paper); color: var(--ink); border: 1px solid var(--line); border-radius: 12px; font-family: var(--mono); font-size: 13.5px; line-height: 1.6; white-space: pre-wrap; overflow-wrap: anywhere; resize: vertical }
 @media (max-width: 600px) { .prompt { font-size: 13px; padding: 14px; min-height: 56em } }
 footer { padding: 28px 0 56px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14.5px }
@@ -166,6 +168,28 @@ Ensuite, avec le binaire forge installé :
 Si tu ne peux pas exécuter de commandes ici, dis-le clairement et n'invente aucun résultat. Dirige-moi plutôt vers Forge Studio (https://forge.mollendorff.ai/), où je peux ouvrir moi-même l'exemple des bagels dans un navigateur.</textarea>
       <p class="fine">Le texte nomme le projet exactement, parce que « Forge » est un nom très répandu, et il installe le binaire publié au lieu de laisser l’IA le compiler pendant des minutes. Sur un téléphone, touchez la boîte, puis Tout sélectionner et Copier.</p>
       <p class="fine">Il faut une IA qui peut exécuter des commandes. Nous l’avons essayé le 15 novembre 2026 : ça a fonctionné avec Claude et avec Grok, forfaits gratuits compris; les forfaits gratuits de ChatGPT et de Gemini n’ont pas pu l’exécuter. Si la vôtre ne le peut pas, le texte lui demande de le dire au lieu d’inventer des chiffres, et <a href="https://forge.mollendorff.ai/">Forge Studio</a> ne demande rien d’autre que votre navigateur.</p>
+    </section>
+
+    <section id="workflows">
+      <h2>D’une personne seule à un pipeline sans personne.</h2>
+      <p>Le même modèle et le même moteur servent quatre façons de travailler. Dans chacune, peu importe qui écrit le modèle, Forge fait les calculs, et chaque nombre remonte à une formule.</p>
+      <div class="ways">
+        <div class="way"><h3>Une personne seule</h3><p>Un modèle est un fichier texte. Changez une donnée, lancez <code>forge calculate</code>, et le fichier montre chaque résultat qui a bougé, prêt à garder dans git comme du code. Aucune IA nécessaire.</p></div>
+        <div class="way"><h3>Une personne avec une IA</h3><p>L’IA écrit le modèle et l’explique; Forge fait chaque somme, donc aucun nombre n’est deviné par l’IA. <a href="https://github.com/mollendorff-ai/forge/blob/main/docs/PROMPTS.md">Cinq requêtes testées</a> pour commencer (en anglais).</p></div>
+        <div class="way"><h3>Un pipeline sans IA</h3><p>Forge comme calculateur dans un traitement financier, en fin de mois par exemple : les mêmes données donnent les mêmes nombres, une formule en échec arrête le traitement, et les résultats sortent en JSON, en CSV ou en classeur Excel.</p></div>
+        <div class="way"><h3>Un pipeline avec IA</h3><p>La direction de Forge : un agent lit un nouveau rapport et écrit le modèle, Forge le vérifie et le calcule, et une personne révise le changement.</p></div>
+      </div>
+      <figure class="sheet flow" aria-label="Un pipeline d’IA avec Forge, étape par étape">
+        <figcaption><span>un pipeline d’IA</span><span>personne avant la révision</span></figcaption>
+        <div class="rows">
+          <div class="row"><code><span class="n">1</span> <span class="k">agent</span>    lit le rapport du trimestre, écrit <span class="s">model.yaml</span></code></div>
+          <div class="row calc"><code><span class="n">2</span> <span class="k">forge</span>    validate, calculate</code><span class="out">refusé? la raison retourne à l’étape 1</span></div>
+          <div class="row calc"><code><span class="n">3</span> <span class="k">forge</span>    report --format json</code><span class="out">les nombres, issus des formules</span></div>
+          <div class="row"><code><span class="n">4</span> <span class="k">agent</span>    ouvre une pull request</code></div>
+          <div class="row"><code><span class="n">5</span> <span class="k">personne</span> révise un diff de formules et de données, pas un classeur à croire sur parole</code></div>
+        </div>
+      </figure>
+      <p class="fine">Les deux premières façons ont été suivies de bout en bout par des agents d’IA qui n’avaient jamais vu Forge. Les deux pipelines reposent sur des commandes qui fonctionnent, mais n’ont pas encore été exécutés en entier; celui avec IA sera démontré avec Sentinel, un pipeline d’analyse de résultats financiers bâti sur Forge. Chaque façon, avec son diagramme et ses commandes : <a href="https://github.com/mollendorff-ai/forge/blob/main/docs/WORKFLOWS.md">le guide des workflows</a> (en anglais).</p>
     </section>
 
     <section>

@@ -34,4 +34,14 @@ else
     if grep -qF "$line" "$f"; then echo "$f: install line ok"; else echo "$f: install line differs from Forge's README"; status=1; fi
   done
 fi
+
+# Every page of Forge's docs the home page links to is on Forge's main branch
+for page in $(grep -ohE 'github.com/mollendorff-ai/forge/blob/main/docs/[A-Z]+\.md' index.html fr/index.html llms.txt | sort -u); do
+  path=${page#github.com/mollendorff-ai/forge/blob/main/}
+  if curl -fsSL -o /dev/null "https://raw.githubusercontent.com/mollendorff-ai/forge/main/$path"; then
+    echo "$path: on Forge's main branch: ok"
+  else
+    echo "$path is linked from the home page but is not on Forge's main branch"; status=1
+  fi
+done
 exit $status
