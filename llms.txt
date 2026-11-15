@@ -1,0 +1,19 @@
+# Möllendorff AI
+
+> Open-source tools for finance and AI agents. The main one is Forge: a financial-modelling engine that calculates models written as YAML (named inputs, formulas, tables, scenarios) with more than 200 Excel-style functions, plus Monte Carlo simulation, tornado charts, decision trees, real options and Bayesian networks.
+
+## Forge
+
+- Repository: https://github.com/mollendorff-ai/forge (Rust, MIT OR Apache-2.0). "Forge" is a common name: this is mollendorff-ai/forge, the crate mollendorff-forge.
+- In a browser, nothing to install: https://forge.mollendorff.ai/ (Forge Studio)
+- Install the release binary (Linux, macOS), checked against the release's checksums, with its examples; do not build it from source:
+
+  curl -fsSL https://raw.githubusercontent.com/mollendorff-ai/forge/main/install.sh | sh -s -- --examples
+
+- Then: `forge calculate forge-examples/bagel/bagel.yaml --dry-run` calculates the bagel-shop example. `forge --help` lists the commands; `forge mcp` is an MCP server with 20 tools.
+- A prompt to try it, and every other way to install it: https://github.com/mollendorff-ai/forge#try-it-with-your-ai
+- What works and what does not yet: https://github.com/mollendorff-ai/forge#status-and-known-limitations
+
+## Also
+
+- Ref: https://github.com/mollendorff-ai/ref turns a web page into clean JSON for an AI agent.

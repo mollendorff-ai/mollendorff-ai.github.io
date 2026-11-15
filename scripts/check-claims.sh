@@ -19,4 +19,19 @@ check() {
 }
 check index.html
 check fr/index.html
+
+# The install line given to an AI is the one Forge's README gives, and the
+# script it runs is there
+readme=$(curl -fsSL https://raw.githubusercontent.com/mollendorff-ai/forge/main/README.md)
+line=$(printf '%s\n' "$readme" | grep -o 'curl -fsSL https://raw.githubusercontent.com/mollendorff-ai/forge/main/install.sh | sh -s -- --examples' | head -1 || true)
+if [ -z "$line" ]; then
+  echo "Forge's README gives no install.sh line"
+  status=1
+else
+  curl -fsSL -o /dev/null https://raw.githubusercontent.com/mollendorff-ai/forge/main/install.sh \
+    || { echo "install.sh is not on Forge's main branch"; status=1; }
+  for f in index.html fr/index.html llms.txt; do
+    if grep -qF "$line" "$f"; then echo "$f: install line ok"; else echo "$f: install line differs from Forge's README"; status=1; fi
+  done
+fi
 exit $status
