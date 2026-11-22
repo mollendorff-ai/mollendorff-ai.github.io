@@ -1,6 +1,6 @@
 # Möllendorff AI
 
-> Open-source tools for finance and AI agents. The main one is Forge: a financial-modelling engine that calculates models written as YAML (named inputs, formulas, tables, scenarios) with more than 200 Excel-style functions, plus Monte Carlo simulation, tornado charts, decision trees, real options, Bayesian networks and game theory (equilibria and repeated-play tournaments).
+> Open-source tools for finance and AI agents. The main one is Forge: a financial-modelling engine that calculates models written as YAML (named inputs, formulas, tables, scenarios) with more than 200 Excel-style functions, plus Monte Carlo simulation, tornado charts, decision trees, real options, Bayesian networks and game theory (equilibria of games of any number of players, how strategies spread through a population, and repeated-play tournaments).
 
 ## Forge
 
