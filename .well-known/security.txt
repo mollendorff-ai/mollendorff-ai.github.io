@@ -1,0 +1,7 @@
+# RFC 9116. Kept in step with mollendorff-ai/forge's .well-known/security.txt,
+# which validation/repo there checks against Forge's SECURITY.md.
+Contact: mailto:security@mollendorff.ai
+Expires: 2027-11-26T00:00:00.000Z
+Policy: https://github.com/mollendorff-ai/forge/blob/main/SECURITY.md
+Canonical: https://mollendorff.ai/.well-known/security.txt
+Preferred-Languages: en
