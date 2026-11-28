@@ -44,4 +44,28 @@ for page in $(grep -ohE 'github.com/mollendorff-ai/forge/blob/main/docs/[A-Z]+\.
     echo "$path is linked from the home page but is not on Forge's main branch"; status=1
   fi
 done
+
+# The question pages: the model each one opens in Forge Studio is, byte for
+# byte, the file in Forge's examples/questions on its main branch
+for page in $(find questions fr/questions -name index.html | sort); do
+  python3 - "$page" <<'PY' || status=1
+import base64, gzip, re, sys, urllib.request
+page = sys.argv[1]
+html = open(page, encoding="utf-8").read()
+links = set(re.findall(r'forge\.mollendorff\.ai/#name=([\w.]+)&amp;gzip=([\w-]+)', html))
+bad = 0
+for name, data in links:
+    model = gzip.decompress(base64.urlsafe_b64decode(data + "=" * (-len(data) % 4)))
+    url = "https://raw.githubusercontent.com/mollendorff-ai/forge/main/examples/questions/" + name
+    try:
+        main = urllib.request.urlopen(url).read()
+    except Exception as e:
+        print(f"{page}: {name} is not on Forge's main branch ({e})"); bad = 1; continue
+    if model != main:
+        print(f"{page}: the link's {name} differs from Forge's main branch"); bad = 1
+if not bad:
+    print(f"{page}: {len(links)} model link ok")
+sys.exit(bad)
+PY
+done
 exit $status

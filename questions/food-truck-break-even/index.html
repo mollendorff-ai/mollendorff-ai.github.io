@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>How many meals a day does a food truck need to break even? | Möllendorff AI</title>
+<meta name="description" content="A food truck breaks even at 55 meals a day if the season goes to plan, but loses money in 72 seasons out of 100 at that figure. Nine seasons in ten need 68.5. Open the model and change it.">
+<link rel="canonical" href="https://mollendorff.ai/questions/food-truck-break-even/">
+<link rel="alternate" hreflang="en" href="https://mollendorff.ai/questions/food-truck-break-even/">
+<link rel="alternate" hreflang="fr" href="https://mollendorff.ai/fr/questions/camion-de-rue-seuil-de-rentabilite/">
+<link rel="alternate" hreflang="x-default" href="https://mollendorff.ai/questions/food-truck-break-even/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mollendorff.ai/questions/food-truck-break-even/">
+<meta property="og:title" content="How many meals a day does a food truck need to break even? | Möllendorff AI">
+<meta property="og:description" content="A food truck breaks even at 55 meals a day if the season goes to plan, but loses money in 72 seasons out of 100 at that figure. Nine seasons in ten need 68.5. Open the model and change it.">
+<meta property="og:image" content="https://mollendorff.ai/img/card.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ECEFEB" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F1514" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/img/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<style>
+:root {
+  --bg: #ECEFEB; --paper: #FFFFFF; --ink: #162022; --muted: #55615E; --line: #D3D9D4;
+  --accent: #1E6B61; --accent-ink: #FFFFFF; --ember: #A24E1E; --result: #1E6B61; --margin: #F5F7F4;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #0F1514; --paper: #18201F; --ink: #E4EBE8; --muted: #9AA8A4; --line: #2A3532;
+          --accent: #5BBFAE; --accent-ink: #08201C; --ember: #E58C55; --result: #5BBFAE; --margin: #131A19; }
+}
+* { box-sizing: border-box }
+html { -webkit-text-size-adjust: 100% }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.55 }
+a { color: var(--accent); text-underline-offset: 3px }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px }
+.wrap { max-width: 720px; margin: 0 auto; padding: 0 20px }
+.top { display: flex; justify-content: space-between; align-items: baseline; padding: 24px 0 0; font-size: 16px }
+.top strong { font-size: 18px; letter-spacing: -0.01em }
+.top strong a { color: inherit; text-decoration: none }
+.top nav { display: flex; gap: 20px }
+.top nav a { color: var(--muted); text-decoration: none }
+.top nav a:hover { color: var(--ink) }
+.back { margin: 40px 0 0; font-size: 15px }
+h1, h2 { text-wrap: balance }
+h1 { font-size: clamp(30px, 6vw, 44px); line-height: 1.08; letter-spacing: -0.025em; margin: 12px 0 20px; font-weight: 750 }
+.lead { font-size: 20px; line-height: 1.45; margin: 0 0 28px }
+.stat { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; margin: 0 0 32px }
+.stat b { display: block; font-size: clamp(34px, 8vw, 52px); line-height: 1.05; letter-spacing: -0.03em; color: var(--result); font-variant-numeric: tabular-nums }
+.stat span { color: var(--muted) }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 0 0 8px }
+.btn { display: inline-block; padding: 13px 22px; border-radius: 10px; text-decoration: none; font-weight: 650; font-size: 16px; background: var(--accent); color: var(--accent-ink) }
+.btn:hover { filter: brightness(1.08) }
+.fine { margin: 10px 0 0; font-size: 14.5px; color: var(--muted) }
+section { padding: 34px 0 6px; border-top: 1px solid var(--line); margin-top: 34px }
+h2 { font-size: clamp(22px, 4vw, 27px); line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 14px }
+p { margin: 0 0 14px }
+ul { margin: 0 0 14px; padding-left: 1.2em }
+li { margin: 0 0 8px }
+table { border-collapse: collapse; width: 100%; margin: 0 0 14px; font-variant-numeric: tabular-nums }
+th, td { text-align: left; padding: 9px 0; border-top: 1px solid var(--line); vertical-align: top }
+td:last-child, th:last-child { text-align: right; white-space: nowrap; padding-left: 16px }
+th { font-weight: 600 }
+caption { text-align: left; color: var(--muted); font-size: 14.5px; padding-bottom: 6px }
+.more { display: grid; gap: 0; margin: 0 0 14px; padding: 0; list-style: none }
+.more li { padding: 12px 0; border-top: 1px solid var(--line); margin: 0 }
+.more li span { display: block; color: var(--muted); font-size: 15px }
+code { font-family: var(--mono); font-size: .88em; background: var(--paper); border: 1px solid var(--line); padding: 1px 6px; border-radius: 6px }
+footer { padding: 28px 0 56px; border-top: 1px solid var(--line); margin-top: 40px; color: var(--muted); font-size: 14.5px }
+footer p { margin: 0 0 6px }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <strong><a href="/">Möllendorff AI</a></strong>
+    <nav><a href="/fr/questions/camion-de-rue-seuil-de-rentabilite/" lang="fr" hreflang="fr">Français</a><a href="https://github.com/mollendorff-ai">GitHub</a></nav>
+  </div>
+
+  <main>
+    <p class="back"><a href="/questions/">← All five questions</a></p>
+    <h1>How many meals a day does a food truck need to break even?</h1>
+    <p class="lead">About 55 meals a day, if the season goes to plan. But no season goes to plan: a truck that sells 55 meals a day makes money in only 28 seasons out of 100. To make nine seasons in ten profitable it needs about 68.5 a day, a quarter more.</p>
+    <div class="stat"><b>28 in 100</b><span>seasons that make money at the break-even figure of 55 meals a day.</span></div>
+    <div class="actions"><a class="btn" href="https://forge.mollendorff.ai/#name=food_truck.yaml&amp;gzip=H4sIACQkCmsC_5VV227bRhB951cM6IfYrsRSjpXGBJIivQB9KRAkBvoQBMRKHEmElrvq7lKK_r5ndklFchwgNWyYe5kzZ2bOzNYr69Zc79n51pqK8nkxK8o8u6K_7IE6ZY7UsdKeFDXqSI1l-VxZ21Bw_XJLhhmflhaO1ZZ4z-ZXGH_oDbWGwoaJv6hup2G2srphV-GUKHpNNlOxoX979gEM_M-CXUfs4qg6TdPpTiuDf7YPuz6QZ-WtKXbOrtqA7b1yA8d6x64WltNpB-d3pXyoLzSbl2dOfdv1WgX-vsv_dRk-PPOW8vfXl8zeUnlDb6gsHvIfZwnX71JiX_gh0oruXtEBLvyEVu2epQ5SA9kq6BEZ7n2vNCnjD-yoafdtwx5Akvyl9cHT4hgXnXJreLQG1kIFJg2tAemxx2T6bsGuoN-Q5OTDMWkACJYlp1oziSZJCjbWQkMah40K0YEPjjkkyAl1FvZ2FVBdlN_jhjIDrVhRWcdLBX20so3r4jIc7BCMrxLvMwEG8RV1A6ionHaVfMdk0VoECrbiIbF9FqFTWziT6FqzBtJg7ZSweac1Mr3uHaccdKpBkndFlsXKVBldVrKi-ZzGn6uUjic5mow1EF6w37l2yRXN7jOKzRShBLSi--KhPGGBneOmZYMqSjA7tdyqtXAmWirX1Cvm2kGgFYRW3r3CtpSuFjeGG3h4WcpVVHFkW4MUNDUvBxeKNqxxBnX1rE8p27VhuYFpykwdhSRSLMuv7OTeKFaNezwBYd87ZZb4BGbXBoQu17YCxybLDqyk1JLEK_pDZHZCgX5k3ULyg9hSpRt7iIul4GqNeSOFD2OsIlGBI9or3UtWX8cVOliaFzPtzd-_F-___PB4_XqCwwndlzd5liW1JiL_PFMzUmuw8OFUt0r2G9tF0U7OpC1MGLOyuaTxDItH1yqzxtpdl8UvJejgt5jNI5_U7mNYUqanCGnsnFeYpjRktDglIx8F-o39CEy3KePF5US6HTq4SNFEnDgzvsrzeUZRzjC_noFP2rpQ581p-0Ls-SBN_x3Yc-3RTyPwEy3D7RhWHjtLpu83gGkC3D6NB7wiOtLfWRO4Bm1txboNDOYy8dHeEH1sBemou9RmXl41NGJFeB-AuDkCc9kvGGfppRqimkIPqPpCc3X5dmWpjcQMam4hpIo-zaCJOf4eys_DedhgDm3wdspxjlcl_5z9B9119yO2BwAA">Open this model in Forge Studio</a></div>
+    <p class="fine">The model travels in the link, after the #, which no server receives: it opens and calculates in your browser, and nothing leaves your device.</p>
+
+    <section>
+      <h2>The truck</h2>
+      <p>A meal sells for 14. After the card fee (2.6%) and the food (4.90), each meal leaves 8.736. A day out costs 250 (a helper, fuel, the pitch), and the season costs 26,000 whatever happens (the truck’s lease, insurance, permits, the kitchen). The season is planned for 130 days, and the plan is 55 meals a day.</p>
+      <p>Two things are not known. Some days the truck stays in because of rain, a breakdown or a cancelled event: 18 on the plan, but anywhere from 8 to 40. And a day out sells what the street gives: seldom more than the plan, often less (between 70% and 115% of it).</p>
+    </section>
+
+    <section>
+      <h2>Why break-even is not enough</h2>
+      <p>On the plan the truck is out 112 days and the costs are 54,000, so the break-even is 55.19 meals a day: the usual answer, fixed costs divided by what a meal leaves. But the plan is a middle that is rarely met. Bad days cost the truck more than good days earn it, so the average season at 55 meals a day loses about 3,300, and only 28 seasons in 100 make money.</p>
+      <p>What a day out sells decides the season far more than the weather does. To make 90 seasons in 100 profitable, the truck must plan for 68.5 meals a day. That is the number a lender or a partner should ask for.</p>
+    </section>
+
+    <section>
+      <h2>The figures</h2>
+      <table>
+        <caption>A season of 130 days planned, 5,000 simulated futures</caption>
+        <tr><td>Break-even, if the season goes to plan</td><td>55.19 meals a day</td></tr>
+        <tr><td>Season’s result at 55 meals a day, at plan</td><td>−186</td></tr>
+        <tr><td>Season’s result at 55 meals a day, average</td><td>−3,295</td></tr>
+        <tr><td>Seasons that make money at 55 meals a day</td><td>28%</td></tr>
+        <tr><td>A bad tenth of seasons: result</td><td>−10,469</td></tr>
+        <tr><td>A good tenth of seasons: result</td><td>3,105</td></tr>
+        <tr><td>Meals a day for 9 profitable seasons in 10</td><td>68.5</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Change it and see</h2>
+      <ul>
+        <li>Change <code>meals_per_day</code> and watch the chance of a profitable season move: how many meals a day for one season in two?</li>
+        <li>Change the days lost or the range of demand in the YAML view, and see which of the two moves the answer more.</li>
+        <li>Tap <b>Analyze</b> and run a break-even on <code>season.profit</code> against <code>meals_per_day</code>.</li>
+      </ul>
+      <div class="actions"><a class="btn" href="https://forge.mollendorff.ai/#name=food_truck.yaml&amp;gzip=H4sIACQkCmsC_5VV227bRhB951cM6IfYrsRSjpXGBJIivQB9KRAkBvoQBMRKHEmElrvq7lKK_r5ndklFchwgNWyYe5kzZ2bOzNYr69Zc79n51pqK8nkxK8o8u6K_7IE6ZY7UsdKeFDXqSI1l-VxZ21Bw_XJLhhmflhaO1ZZ4z-ZXGH_oDbWGwoaJv6hup2G2srphV-GUKHpNNlOxoX979gEM_M-CXUfs4qg6TdPpTiuDf7YPuz6QZ-WtKXbOrtqA7b1yA8d6x64WltNpB-d3pXyoLzSbl2dOfdv1WgX-vsv_dRk-PPOW8vfXl8zeUnlDb6gsHvIfZwnX71JiX_gh0oruXtEBLvyEVu2epQ5SA9kq6BEZ7n2vNCnjD-yoafdtwx5Akvyl9cHT4hgXnXJreLQG1kIFJg2tAemxx2T6bsGuoN-Q5OTDMWkACJYlp1oziSZJCjbWQkMah40K0YEPjjkkyAl1FvZ2FVBdlN_jhjIDrVhRWcdLBX20so3r4jIc7BCMrxLvMwEG8RV1A6ionHaVfMdk0VoECrbiIbF9FqFTWziT6FqzBtJg7ZSweac1Mr3uHaccdKpBkndFlsXKVBldVrKi-ZzGn6uUjic5mow1EF6w37l2yRXN7jOKzRShBLSi--KhPGGBneOmZYMqSjA7tdyqtXAmWirX1Cvm2kGgFYRW3r3CtpSuFjeGG3h4WcpVVHFkW4MUNDUvBxeKNqxxBnX1rE8p27VhuYFpykwdhSRSLMuv7OTeKFaNezwBYd87ZZb4BGbXBoQu17YCxybLDqyk1JLEK_pDZHZCgX5k3ULyg9hSpRt7iIul4GqNeSOFD2OsIlGBI9or3UtWX8cVOliaFzPtzd-_F-___PB4_XqCwwndlzd5liW1JiL_PFMzUmuw8OFUt0r2G9tF0U7OpC1MGLOyuaTxDItH1yqzxtpdl8UvJejgt5jNI5_U7mNYUqanCGnsnFeYpjRktDglIx8F-o39CEy3KePF5US6HTq4SNFEnDgzvsrzeUZRzjC_noFP2rpQ581p-0Ls-SBN_x3Yc-3RTyPwEy3D7RhWHjtLpu83gGkC3D6NB7wiOtLfWRO4Bm1txboNDOYy8dHeEH1sBemou9RmXl41NGJFeB-AuDkCc9kvGGfppRqimkIPqPpCc3X5dmWpjcQMam4hpIo-zaCJOf4eys_DedhgDm3wdspxjlcl_5z9B9119yO2BwAA">Open this model in Forge Studio</a></div>
+      <p class="fine">The model is <a href="https://github.com/mollendorff-ai/forge/blob/main/examples/questions/food_truck.yaml"><code>food_truck.yaml</code></a> in Forge’s examples. The <code>forge simulate --seek</code> command finds the 68.5.</p>
+    </section>
+
+    <section>
+      <h2>What it assumes</h2>
+      <ul>
+        <li>The costs, the price and the fee are fixed; only the days lost and what a day sells are uncertain.</li>
+        <li>Every meal sold is the same dish at the same price.</li>
+        <li>A truck that loses money in a season has the cash to carry on to the next.</li>
+      </ul>
+      <p class="fine">All figures are made up, for illustration. This is not financial, legal or tax advice.</p>
+    </section>
+
+    <section>
+      <h2>Other questions</h2>
+      <ul class="more">
+        <li><a href="/questions/salary-or-stock-options/">Higher salary or stock options: which job offer pays more?</a></li>
+        <li><a href="/questions/mortgage-or-tfsa/">Pay down the mortgage or put the money in a TFSA?</a></li>
+        <li><a href="/questions/match-a-price-cut/">A competitor cut prices: should I match?</a></li>
+        <li><a href="/questions/settle-or-go-to-court/">Accept the settlement offer or go to court?</a></li>
+      </ul>
+      <p>These pages are made with <a href="https://github.com/mollendorff-ai/forge">Forge</a>, an open-source engine that calculates financial models written as plain text. Each model is a file in <a href="https://github.com/mollendorff-ai/forge/tree/main/examples/questions">Forge’s examples</a>, and its figures are checked against calculations written outside Forge.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Möllendorff AI builds open-source tools for finance and AI agents. This is research and development, offered free and without warranty; it is not a service.</p>
+    <p>This page sets no cookies, runs no scripts and loads nothing from other sites.</p>
+  </footer>
+</div>
+</body>
+</html>

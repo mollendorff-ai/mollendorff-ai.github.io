@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A competitor cut prices: should I match? | Möllendorff AI</title>
+<meta name="description" content="Match your rival’s price cut when more than a quarter of your customers would leave: the cut divided by what you earn on a sale. If you don’t know, matching pays in 66 futures out of 100. Open the model.">
+<link rel="canonical" href="https://mollendorff.ai/questions/match-a-price-cut/">
+<link rel="alternate" hreflang="en" href="https://mollendorff.ai/questions/match-a-price-cut/">
+<link rel="alternate" hreflang="fr" href="https://mollendorff.ai/fr/questions/suivre-une-baisse-de-prix/">
+<link rel="alternate" hreflang="x-default" href="https://mollendorff.ai/questions/match-a-price-cut/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mollendorff.ai/questions/match-a-price-cut/">
+<meta property="og:title" content="A competitor cut prices: should I match? | Möllendorff AI">
+<meta property="og:description" content="Match your rival’s price cut when more than a quarter of your customers would leave: the cut divided by what you earn on a sale. If you don’t know, matching pays in 66 futures out of 100. Open the model.">
+<meta property="og:image" content="https://mollendorff.ai/img/card.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ECEFEB" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F1514" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/img/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<style>
+:root {
+  --bg: #ECEFEB; --paper: #FFFFFF; --ink: #162022; --muted: #55615E; --line: #D3D9D4;
+  --accent: #1E6B61; --accent-ink: #FFFFFF; --ember: #A24E1E; --result: #1E6B61; --margin: #F5F7F4;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #0F1514; --paper: #18201F; --ink: #E4EBE8; --muted: #9AA8A4; --line: #2A3532;
+          --accent: #5BBFAE; --accent-ink: #08201C; --ember: #E58C55; --result: #5BBFAE; --margin: #131A19; }
+}
+* { box-sizing: border-box }
+html { -webkit-text-size-adjust: 100% }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.55 }
+a { color: var(--accent); text-underline-offset: 3px }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px }
+.wrap { max-width: 720px; margin: 0 auto; padding: 0 20px }
+.top { display: flex; justify-content: space-between; align-items: baseline; padding: 24px 0 0; font-size: 16px }
+.top strong { font-size: 18px; letter-spacing: -0.01em }
+.top strong a { color: inherit; text-decoration: none }
+.top nav { display: flex; gap: 20px }
+.top nav a { color: var(--muted); text-decoration: none }
+.top nav a:hover { color: var(--ink) }
+.back { margin: 40px 0 0; font-size: 15px }
+h1, h2 { text-wrap: balance }
+h1 { font-size: clamp(30px, 6vw, 44px); line-height: 1.08; letter-spacing: -0.025em; margin: 12px 0 20px; font-weight: 750 }
+.lead { font-size: 20px; line-height: 1.45; margin: 0 0 28px }
+.stat { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; margin: 0 0 32px }
+.stat b { display: block; font-size: clamp(34px, 8vw, 52px); line-height: 1.05; letter-spacing: -0.03em; color: var(--result); font-variant-numeric: tabular-nums }
+.stat span { color: var(--muted) }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 0 0 8px }
+.btn { display: inline-block; padding: 13px 22px; border-radius: 10px; text-decoration: none; font-weight: 650; font-size: 16px; background: var(--accent); color: var(--accent-ink) }
+.btn:hover { filter: brightness(1.08) }
+.fine { margin: 10px 0 0; font-size: 14.5px; color: var(--muted) }
+section { padding: 34px 0 6px; border-top: 1px solid var(--line); margin-top: 34px }
+h2 { font-size: clamp(22px, 4vw, 27px); line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 14px }
+p { margin: 0 0 14px }
+ul { margin: 0 0 14px; padding-left: 1.2em }
+li { margin: 0 0 8px }
+table { border-collapse: collapse; width: 100%; margin: 0 0 14px; font-variant-numeric: tabular-nums }
+th, td { text-align: left; padding: 9px 0; border-top: 1px solid var(--line); vertical-align: top }
+td:last-child, th:last-child { text-align: right; white-space: nowrap; padding-left: 16px }
+th { font-weight: 600 }
+caption { text-align: left; color: var(--muted); font-size: 14.5px; padding-bottom: 6px }
+.more { display: grid; gap: 0; margin: 0 0 14px; padding: 0; list-style: none }
+.more li { padding: 12px 0; border-top: 1px solid var(--line); margin: 0 }
+.more li span { display: block; color: var(--muted); font-size: 15px }
+code { font-family: var(--mono); font-size: .88em; background: var(--paper); border: 1px solid var(--line); padding: 1px 6px; border-radius: 6px }
+footer { padding: 28px 0 56px; border-top: 1px solid var(--line); margin-top: 40px; color: var(--muted); font-size: 14.5px }
+footer p { margin: 0 0 6px }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <strong><a href="/">Möllendorff AI</a></strong>
+    <nav><a href="/fr/questions/suivre-une-baisse-de-prix/" lang="fr" hreflang="fr">Français</a><a href="https://github.com/mollendorff-ai">GitHub</a></nav>
+  </div>
+
+  <main>
+    <p class="back"><a href="/questions/">← All five questions</a></p>
+    <h1>A competitor cut prices: should I match?</h1>
+    <p class="lead">Match if more than a quarter of your customers would leave if you held your price. That share is the cut divided by what you earn on a sale (2 ÷ 8). Below it, holding earns more. Above a third, a price war is certain, and both shops end up 2,000 a month poorer.</p>
+    <div class="stat"><b>66 in 100</b><span>futures in which matching pays, when the share of customers who would leave is anywhere from 10% to 50%.</span></div>
+    <div class="actions"><a class="btn" href="https://forge.mollendorff.ai/#name=price_cut.yaml&amp;gzip=H4sIACQkCmsC_6VXUW_bNhB-1684JBjWdLaquE0auCiGvgzrwzBgKLCHYhAYibaISKRLUlGNof9935GSLMV2tqEGkigi-d13d9_d0fnG2K3MH6V1yug1XdykN2l2kVzSBypMs5NeeWOpaD3trCqkW5OrTFuX9JEa4YvqZ2z9o9WkNPlKkvwqml0tHW1MXUq7xipRsEGFqIu2Fl7Sl1Y6D3PuVcDMgZ7uRVPTclna_dK2enJsK5rzJ_7rPiC7QmphlaGNKh5qXnLeNPA7uQTKp86wYztHTtZ1cMUxoK-U3pLwtMoW1FWqqBAW5x1JgUez4Z0NXa9S-lRJ4Fj1KGoOlyOFn8CC7vckyEvtq5Q-bhC5CsGhZh-XF-TAg7HwZsKKaike5ZpWdxzc6wwEAARCgK2FTgPv37Uk3Tb30lIpC1VKl9JvnBemzV6EzIm9A3mpqTFWHmxQx5kcLGG70OOZUj0CrYwmJXJtt2DxYkWv6G4Bd760wnppr1L6oEveApiQAheNIWQPCitwy3krpY_MFQR0L2vTHSAWIRzMF-sRyOh6T_JLq2p1b1XbkIg2Ynh_dIFhJxxAGuW8eJDvSNyb4EOgD4zTDogNLI5OBndu2R2Qs-XVgt96psIhAwj7IR_7Ewa_EGYj3SIQuscLknhod7RaZFnGdAyyTDuDONt38NR3UrKa-bzvDA46AgqSHk4Pno9wg32BPI0BENEekwFUJXY7qTmUMcxBifLrThYQXFRkpJrSWAR5q11rZayFMcxB4X12OgXrQfYV2-4q06ui1Q_adBp5Rl1s1BYwLtBrRInVXZokXDjrhA7CWrNcMzp8LiNL3ojsOcEdog_WgqtrrLfAGFDhL7Sf4bnVyudcdYBdBTN4Ovm5nIkkFh-rgdfwrgVill5n4X9GRb_74SLhc59GzxFBMRCdVAri0QSBmaieSood1MAbARBClQeA9dza6u6JtSQqkbdx9uN2tLAGvRE73jNiGqkvA3w6-n8xhb7rI_HM-Zf04noAwdar5wFvk9D1Q1Lge18wQEY5yuhoWGOLrNX8PP1D3F72OClvnvOHQgaks36cAMLeOe2Io4LMRQ2u_w6FsPwUQzFJ3NV5G29v76IN9uJ_GFk-Z-QoIjdvb7Mk4SbqGD0WZrSDvl5YtfNhRv_K04NF2I-Pfj4rPxk04RTGxD5U4-cG20JZ_BUWAI2-tlU8zj8zj9D4-rV900gP5DV528pZdQkqeDrGBsI90mw2Q8uxpuPSjvVA_aKL9Hup09_xz_ugo3QU0SKWdP96GuVv_fGwPj89Sfj8_KCob0kitOv4EkLxrpJzV8_DoDhK34tJVpC3gxCuMCLOZQzlfXPUTIi08RzZMIcnc7efr8odOs2TURz7CDA6Yb-D51P5Zunr-ec85w_9FB1IzififB7Guw7PwyHA2JdvhdLuiPY8NUz8KNczyqs32ZTWnzzoBhOYJVaP84MM8-kHKYpBF3LCrhKunwC9H_lGWeefZTlR1kh01OqM5fL16pgmGw9GQjHwwGCP55xxk6zl5FLByK7Pe7hfPhfAIfWzkM6jF3vinNc4gWmrHjF_cWs50IFG44WER34M2OH6cdzrQmtKd7gL5IdtcwrDEM_ZJ-XyQlov4tw7hVWaRmmIq0wbeaLQpt5cR74zYYYCO6fOZLj7h7DWZi_qw_X_RIP9ReGWKMN3GkFVq0uLe-S8QNEn8X1G2LHBPW304abBzeHp141T9oz1--UGWfluk29ukn8AtupDx9MNAAA">Open this model in Forge Studio</a></div>
+    <p class="fine">The model travels in the link, after the #, which no server receives: it opens and calculates in your browser, and nothing leaves your device.</p>
+
+    <section>
+      <h2>The street</h2>
+      <p>Two shops sell the same thing for 20, which costs each of them 12, and each sells 1,000 a month. Your rival cuts its price by a tenth, to 18, so a sale leaves 6 instead of 8. If you hold your price, some of your customers go to the cheaper shop. By this plan, 28% of them.</p>
+      <p>Matching earns 6,000 a month. Holding earns 5,760 (you keep 72% of the customers, at the full margin). So at 28%, matching earns 240 a month more, a small gain, and the street has two stable outcomes: both hold at 8,000 each, or both cut at 6,000 each. Which one happens depends on what each shop expects of the other.</p>
+    </section>
+
+    <section>
+      <h2>One number decides</h2>
+      <p>Matching pays when the share of customers who would leave is more than the cut divided by your margin, 2 ÷ 8, a quarter. Three zones follow:</p>
+      <ul>
+        <li><b>Below a quarter:</b> holding is the only stable outcome. The rival’s cut was a mistake.</li>
+        <li><b>Between a quarter and a third:</b> both outcomes are stable, and the street can go either way.</li>
+        <li><b>Above a third (2 ÷ 6):</b> cutting pays whatever the other does, so both cut and each earns 2,000 a month less than if both had held. That is the price war.</li>
+      </ul>
+      <p>Tap <b>fickle_customers</b> (45 in 100 would leave) or <b>loyal_customers</b> (15 in 100) in the model to see the street move from one zone to another.</p>
+    </section>
+
+    <section>
+      <h2>How sure is the answer?</h2>
+      <p>Sure of the thresholds, not of where your customers are. Nobody knows how many would leave. If it is anywhere between 10% and 50%, most likely 28%, then over 5,000 simulated futures matching pays in 66 of 100, being the first to cut would pay in 28, and the street has two stable outcomes in 38.</p>
+      <p>The first thing to find out is how many of your customers shop on price alone. The uncertain version of the model is <a href="https://github.com/mollendorff-ai/forge/blob/main/examples/questions/price_cut_unsure.yaml"><code>price_cut_unsure.yaml</code></a>; run <code>forge simulate</code> on it.</p>
+    </section>
+
+    <section>
+      <h2>The figures</h2>
+      <table>
+        <caption>A month for each shop, 1,000 customers each</caption>
+        <tr><td>Both hold the price</td><td>8,000</td></tr>
+        <tr><td>Both cut</td><td>6,000</td></tr>
+        <tr><td>I cut, the rival holds (28% of its customers come)</td><td>7,680</td></tr>
+        <tr><td>I hold, the rival cuts (28% of mine leave)</td><td>5,760</td></tr>
+        <tr><td>Matching earns over holding, at 28%</td><td>240</td></tr>
+        <tr><td>Matching pays above this share of customers leaving</td><td>25%</td></tr>
+        <tr><td>A price war is certain above this share</td><td>33.3%</td></tr>
+        <tr><td>Cost of a price war, each shop, a month</td><td>2,000</td></tr>
+        <tr><td>Futures in which matching pays (share unknown)</td><td>66%</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Change it and see</h2>
+      <ul>
+        <li>Change <code>leave_share</code> and watch the equilibria change at a quarter and at a third.</li>
+        <li>Change the cut, the price or the cost, and see how the thresholds move: a deeper cut raises the share at which you should match.</li>
+        <li>Open the <b>YAML</b> view to see the game: its payoffs are formulas over the prices and the share who leave.</li>
+      </ul>
+      <div class="actions"><a class="btn" href="https://forge.mollendorff.ai/#name=price_cut.yaml&amp;gzip=H4sIACQkCmsC_6VXUW_bNhB-1684JBjWdLaquE0auCiGvgzrwzBgKLCHYhAYibaISKRLUlGNof9935GSLMV2tqEGkigi-d13d9_d0fnG2K3MH6V1yug1XdykN2l2kVzSBypMs5NeeWOpaD3trCqkW5OrTFuX9JEa4YvqZ2z9o9WkNPlKkvwqml0tHW1MXUq7xipRsEGFqIu2Fl7Sl1Y6D3PuVcDMgZ7uRVPTclna_dK2enJsK5rzJ_7rPiC7QmphlaGNKh5qXnLeNPA7uQTKp86wYztHTtZ1cMUxoK-U3pLwtMoW1FWqqBAW5x1JgUez4Z0NXa9S-lRJ4Fj1KGoOlyOFn8CC7vckyEvtq5Q-bhC5CsGhZh-XF-TAg7HwZsKKaike5ZpWdxzc6wwEAARCgK2FTgPv37Uk3Tb30lIpC1VKl9JvnBemzV6EzIm9A3mpqTFWHmxQx5kcLGG70OOZUj0CrYwmJXJtt2DxYkWv6G4Bd760wnppr1L6oEveApiQAheNIWQPCitwy3krpY_MFQR0L2vTHSAWIRzMF-sRyOh6T_JLq2p1b1XbkIg2Ynh_dIFhJxxAGuW8eJDvSNyb4EOgD4zTDogNLI5OBndu2R2Qs-XVgt96psIhAwj7IR_7Ewa_EGYj3SIQuscLknhod7RaZFnGdAyyTDuDONt38NR3UrKa-bzvDA46AgqSHk4Pno9wg32BPI0BENEekwFUJXY7qTmUMcxBifLrThYQXFRkpJrSWAR5q11rZayFMcxB4X12OgXrQfYV2-4q06ui1Q_adBp5Rl1s1BYwLtBrRInVXZokXDjrhA7CWrNcMzp8LiNL3ojsOcEdog_WgqtrrLfAGFDhL7Sf4bnVyudcdYBdBTN4Ovm5nIkkFh-rgdfwrgVill5n4X9GRb_74SLhc59GzxFBMRCdVAri0QSBmaieSood1MAbARBClQeA9dza6u6JtSQqkbdx9uN2tLAGvRE73jNiGqkvA3w6-n8xhb7rI_HM-Zf04noAwdar5wFvk9D1Q1Lge18wQEY5yuhoWGOLrNX8PP1D3F72OClvnvOHQgaks36cAMLeOe2Io4LMRQ2u_w6FsPwUQzFJ3NV5G29v76IN9uJ_GFk-Z-QoIjdvb7Mk4SbqGD0WZrSDvl5YtfNhRv_K04NF2I-Pfj4rPxk04RTGxD5U4-cG20JZ_BUWAI2-tlU8zj8zj9D4-rV900gP5DV528pZdQkqeDrGBsI90mw2Q8uxpuPSjvVA_aKL9Hup09_xz_ugo3QU0SKWdP96GuVv_fGwPj89Sfj8_KCob0kitOv4EkLxrpJzV8_DoDhK34tJVpC3gxCuMCLOZQzlfXPUTIi08RzZMIcnc7efr8odOs2TURz7CDA6Yb-D51P5Zunr-ec85w_9FB1IzififB7Guw7PwyHA2JdvhdLuiPY8NUz8KNczyqs32ZTWnzzoBhOYJVaP84MM8-kHKYpBF3LCrhKunwC9H_lGWeefZTlR1kh01OqM5fL16pgmGw9GQjHwwGCP55xxk6zl5FLByK7Pe7hfPhfAIfWzkM6jF3vinNc4gWmrHjF_cWs50IFG44WER34M2OH6cdzrQmtKd7gL5IdtcwrDEM_ZJ-XyQlov4tw7hVWaRmmIq0wbeaLQpt5cR74zYYYCO6fOZLj7h7DWZi_qw_X_RIP9ReGWKMN3GkFVq0uLe-S8QNEn8X1G2LHBPW304abBzeHp141T9oz1--UGWfluk29ukn8AtupDx9MNAAA">Open this model in Forge Studio</a></div>
+      <p class="fine">The model is <a href="https://github.com/mollendorff-ai/forge/blob/main/examples/questions/price_cut.yaml"><code>price_cut.yaml</code></a> in Forge’s examples.</p>
+    </section>
+
+    <section>
+      <h2>What it assumes</h2>
+      <ul>
+        <li>The two shops are the same: the same costs, the same prices, the same customers.</li>
+        <li>Customers who leave go to the cheaper shop, and none come back.</li>
+        <li>The game is played once, not month after month; repeated play can make holding stable even above a third (Forge’s examples have the long game).</li>
+      </ul>
+      <p class="fine">All figures are made up, for illustration. This is not financial, legal or tax advice.</p>
+    </section>
+
+    <section>
+      <h2>Other questions</h2>
+      <ul class="more">
+        <li><a href="/questions/salary-or-stock-options/">Higher salary or stock options: which job offer pays more?</a></li>
+        <li><a href="/questions/mortgage-or-tfsa/">Pay down the mortgage or put the money in a TFSA?</a></li>
+        <li><a href="/questions/food-truck-break-even/">How many meals a day does a food truck need to break even?</a></li>
+        <li><a href="/questions/settle-or-go-to-court/">Accept the settlement offer or go to court?</a></li>
+      </ul>
+      <p>These pages are made with <a href="https://github.com/mollendorff-ai/forge">Forge</a>, an open-source engine that calculates financial models written as plain text. Each model is a file in <a href="https://github.com/mollendorff-ai/forge/tree/main/examples/questions">Forge’s examples</a>, and its figures are checked against calculations written outside Forge.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Möllendorff AI builds open-source tools for finance and AI agents. This is research and development, offered free and without warranty; it is not a service.</p>
+    <p>This page sets no cookies, runs no scripts and loads nothing from other sites.</p>
+  </footer>
+</div>
+</body>
+</html>

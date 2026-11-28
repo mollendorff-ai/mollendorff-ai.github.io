@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Accept the settlement offer or go to court? | Möllendorff AI</title>
+<meta name="description" content="A 40,000 offer against a 120,000 claim you win 6 times in 10: take the offer. Refusing is worth 33,800, and only wins above a 65.4% chance of winning. Open the model and change the odds.">
+<link rel="canonical" href="https://mollendorff.ai/questions/settle-or-go-to-court/">
+<link rel="alternate" hreflang="en" href="https://mollendorff.ai/questions/settle-or-go-to-court/">
+<link rel="alternate" hreflang="fr" href="https://mollendorff.ai/fr/questions/regler-ou-aller-en-proces/">
+<link rel="alternate" hreflang="x-default" href="https://mollendorff.ai/questions/settle-or-go-to-court/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mollendorff.ai/questions/settle-or-go-to-court/">
+<meta property="og:title" content="Accept the settlement offer or go to court? | Möllendorff AI">
+<meta property="og:description" content="A 40,000 offer against a 120,000 claim you win 6 times in 10: take the offer. Refusing is worth 33,800, and only wins above a 65.4% chance of winning. Open the model and change the odds.">
+<meta property="og:image" content="https://mollendorff.ai/img/card.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ECEFEB" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F1514" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/img/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<style>
+:root {
+  --bg: #ECEFEB; --paper: #FFFFFF; --ink: #162022; --muted: #55615E; --line: #D3D9D4;
+  --accent: #1E6B61; --accent-ink: #FFFFFF; --ember: #A24E1E; --result: #1E6B61; --margin: #F5F7F4;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #0F1514; --paper: #18201F; --ink: #E4EBE8; --muted: #9AA8A4; --line: #2A3532;
+          --accent: #5BBFAE; --accent-ink: #08201C; --ember: #E58C55; --result: #5BBFAE; --margin: #131A19; }
+}
+* { box-sizing: border-box }
+html { -webkit-text-size-adjust: 100% }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.55 }
+a { color: var(--accent); text-underline-offset: 3px }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px }
+.wrap { max-width: 720px; margin: 0 auto; padding: 0 20px }
+.top { display: flex; justify-content: space-between; align-items: baseline; padding: 24px 0 0; font-size: 16px }
+.top strong { font-size: 18px; letter-spacing: -0.01em }
+.top strong a { color: inherit; text-decoration: none }
+.top nav { display: flex; gap: 20px }
+.top nav a { color: var(--muted); text-decoration: none }
+.top nav a:hover { color: var(--ink) }
+.back { margin: 40px 0 0; font-size: 15px }
+h1, h2 { text-wrap: balance }
+h1 { font-size: clamp(30px, 6vw, 44px); line-height: 1.08; letter-spacing: -0.025em; margin: 12px 0 20px; font-weight: 750 }
+.lead { font-size: 20px; line-height: 1.45; margin: 0 0 28px }
+.stat { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; margin: 0 0 32px }
+.stat b { display: block; font-size: clamp(34px, 8vw, 52px); line-height: 1.05; letter-spacing: -0.03em; color: var(--result); font-variant-numeric: tabular-nums }
+.stat span { color: var(--muted) }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 0 0 8px }
+.btn { display: inline-block; padding: 13px 22px; border-radius: 10px; text-decoration: none; font-weight: 650; font-size: 16px; background: var(--accent); color: var(--accent-ink) }
+.btn:hover { filter: brightness(1.08) }
+.fine { margin: 10px 0 0; font-size: 14.5px; color: var(--muted) }
+section { padding: 34px 0 6px; border-top: 1px solid var(--line); margin-top: 34px }
+h2 { font-size: clamp(22px, 4vw, 27px); line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 14px }
+p { margin: 0 0 14px }
+ul { margin: 0 0 14px; padding-left: 1.2em }
+li { margin: 0 0 8px }
+table { border-collapse: collapse; width: 100%; margin: 0 0 14px; font-variant-numeric: tabular-nums }
+th, td { text-align: left; padding: 9px 0; border-top: 1px solid var(--line); vertical-align: top }
+td:last-child, th:last-child { text-align: right; white-space: nowrap; padding-left: 16px }
+th { font-weight: 600 }
+caption { text-align: left; color: var(--muted); font-size: 14.5px; padding-bottom: 6px }
+.more { display: grid; gap: 0; margin: 0 0 14px; padding: 0; list-style: none }
+.more li { padding: 12px 0; border-top: 1px solid var(--line); margin: 0 }
+.more li span { display: block; color: var(--muted); font-size: 15px }
+code { font-family: var(--mono); font-size: .88em; background: var(--paper); border: 1px solid var(--line); padding: 1px 6px; border-radius: 6px }
+footer { padding: 28px 0 56px; border-top: 1px solid var(--line); margin-top: 40px; color: var(--muted); font-size: 14.5px }
+footer p { margin: 0 0 6px }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <strong><a href="/">Möllendorff AI</a></strong>
+    <nav><a href="/fr/questions/regler-ou-aller-en-proces/" lang="fr" hreflang="fr">Français</a><a href="https://github.com/mollendorff-ai">GitHub</a></nav>
+  </div>
+
+  <main>
+    <p class="back"><a href="/questions/">← All five questions</a></p>
+    <h1>Accept the settlement offer or go to court?</h1>
+    <p class="lead">Take the 40,000. A trial alone would be worth 48,000 on average, which is more than the offer, but you spend 15,000 before you get there, and refusing is worth only 33,800. You should refuse only if you are more than 65.4 in 100 sure to win, and this claim is 60.</p>
+    <div class="stat"><b>65.4 in 100</b><span>the chance of winning above which refusing the offer is worth more than taking it.</span></div>
+    <div class="actions"><a class="btn" href="https://forge.mollendorff.ai/#name=settlement.yaml&amp;gzip=H4sIACQkCmsC_51US2-jMBC-51eM0kN3pZRCW6qKHla70mrv3b0jxwzBKtisbZLy73f8IJAoVatFOQR7_D3mG1PWSu-w3KM2QskC1nmSJel6dQXfOcfegm0QDFrbYofSgqpr1KA07BRYBVwN2n6j6pdBgpC-Gt9Y17dooFZthboATwEVcuE4bqxGhL8DGktv5nYGT0bWtasrQvtDMIqwNBhRYSA18JBu0jQl2oqNia_hLRMdCEelIbvz-xtgsnJCCKdlh5FAbCPkqwFh4SCkIcw3sKIjhU4xygResB6MkDvyY6yBLPdEqo4A14awDkq_whaJCb1NqwVrn4l50CdofnMhnv7J6IBQcq_xeUaIlEE7dIQeDLTKCyLNHTIS3bPRvWdplEZYp0TXJkAl8JPSHGHP2gFdbw4NCzH6bjEKUSNHsUfzHNsUJDAypoL8rWaSN2TJurNCcuexwS45puNDNGykEvYaGhLiKQg9NtNxK20buL_fPKVpEg8606xV0jEfSx6eQnZdaC-LbXRt28B2sFMmdMD0bhBp-DQy3lCHEjd_C1LvgKaKGsMbJbiz1Y7UhxhOmBo_CjPdY548uJ5OSWZE9uUph1vI7snUnFc3GBtC3WIUnwdtrHaUglqpDnJq69dguxa7QWNocsdoLIY-zikJpp9UFlrcudZUe5KcrFbThSldr4sVgGQd0g397S_M2R1c075Wyro6ADv2VDkB-KV4-M_UVTfdIbG1358iDwAAzF__6Q3COBV0hJ646IPGucT5LSiouYJo8Y3WDHIlq9ITOyOqmoiWOxNSUM8pFY5xKar_cXb91nH7XDzE_E9x3dNrtWVb0Qo7FpBS5PNWkErY5fLw7ESVEg8fIj5eRPQZlZVSAe-c5NT5SW6Xk8sXyV2yf57eMb88Xabjm7isChHenRRNPuirUglujwZmT5-R_8vPqifcuNmttOrn2_i-k_-W6B5HcqEJ4WAs_njqXOdj8fs66XPyyamIIrJTC_S9x08OagS4yTzAP2fXu1XCBwAA">Open this model in Forge Studio</a></div>
+    <p class="fine">The model travels in the link, after the #, which no server receives: it opens and calculates in your browser, and nothing leaves your device.</p>
+
+    <section>
+      <h2>The offer</h2>
+      <p>The other side offers 40,000 today. Your claim is for 120,000, and your lawyer thinks you win 6 times in 10. Refusing costs 15,000 of the lawyer’s work before the trial. In 4 cases in 10 the other side then offers 50,000, which you take. Otherwise you go to trial, which costs 20,000 more, and if you lose you pay 10,000 of the other side’s costs.</p>
+    </section>
+
+    <section>
+      <h2>What refusing really means</h2>
+      <p>Refusing is not one outcome but three, and the model gives all of them. In 36 cases in 100 you win the trial and end 85,000 ahead. In 40 you get the better offer and end 35,000 ahead (the 50,000, less the 15,000 already spent). In 24 you lose the trial and end 45,000 behind. The average is 33,800: less than the 40,000 you would have had for certain.</p>
+      <p>The turning point is a chance of winning of 65.4 in 100 (85 ÷ 130). Above it, going to trial is worth 55,000 or more after its own costs, and refusing beats the offer. Below it, the offer wins.</p>
+    </section>
+
+    <section>
+      <h2>How sure is the answer?</h2>
+      <p>As sure as your chance of winning, and that is the one number nobody knows. A lawyer’s 6 in 10 is a judgment, not a measurement. At 60 the offer wins by 6,200; at 66 refusing wins narrowly. So the useful question is how far above or below 65 in 100 your case really is, and what you would pay to be sure.</p>
+    </section>
+
+    <section>
+      <h2>The figures</h2>
+      <table>
+        <caption>What the claimant ends with, after every cost</caption>
+        <tr><td>Take the offer</td><td>40,000</td></tr>
+        <tr><td>Refuse: on average</td><td>33,800</td></tr>
+        <tr><td>Refuse: win the trial (36 in 100)</td><td>85,000</td></tr>
+        <tr><td>Refuse: the better offer (40 in 100)</td><td>35,000</td></tr>
+        <tr><td>Refuse: lose the trial (24 in 100)</td><td>−45,000</td></tr>
+        <tr><td>Go to trial alone, from the court door</td><td>48,000</td></tr>
+        <tr><td>Chance of winning above which refusing wins</td><td>65.4%</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Change it and see</h2>
+      <ul>
+        <li>Open the <b>YAML</b> view and change the chance of winning (<code>probability: 0.6</code> under <code>win</code>, and <code>0.4</code> under <code>lose</code>): at what chance does the best choice change?</li>
+        <li>Change the offer, the lawyer’s fees or the costs you would pay if you lose, and see which moves the turning point most.</li>
+        <li>Look at the tree on the <b>Model</b> view: the best choice is marked, and every branch has its value.</li>
+      </ul>
+      <div class="actions"><a class="btn" href="https://forge.mollendorff.ai/#name=settlement.yaml&amp;gzip=H4sIACQkCmsC_51US2-jMBC-51eM0kN3pZRCW6qKHla70mrv3b0jxwzBKtisbZLy73f8IJAoVatFOQR7_D3mG1PWSu-w3KM2QskC1nmSJel6dQXfOcfegm0QDFrbYofSgqpr1KA07BRYBVwN2n6j6pdBgpC-Gt9Y17dooFZthboATwEVcuE4bqxGhL8DGktv5nYGT0bWtasrQvtDMIqwNBhRYSA18JBu0jQl2oqNia_hLRMdCEelIbvz-xtgsnJCCKdlh5FAbCPkqwFh4SCkIcw3sKIjhU4xygResB6MkDvyY6yBLPdEqo4A14awDkq_whaJCb1NqwVrn4l50CdofnMhnv7J6IBQcq_xeUaIlEE7dIQeDLTKCyLNHTIS3bPRvWdplEZYp0TXJkAl8JPSHGHP2gFdbw4NCzH6bjEKUSNHsUfzHNsUJDAypoL8rWaSN2TJurNCcuexwS45puNDNGykEvYaGhLiKQg9NtNxK20buL_fPKVpEg8606xV0jEfSx6eQnZdaC-LbXRt28B2sFMmdMD0bhBp-DQy3lCHEjd_C1LvgKaKGsMbJbiz1Y7UhxhOmBo_CjPdY548uJ5OSWZE9uUph1vI7snUnFc3GBtC3WIUnwdtrHaUglqpDnJq69dguxa7QWNocsdoLIY-zikJpp9UFlrcudZUe5KcrFbThSldr4sVgGQd0g397S_M2R1c075Wyro6ADv2VDkB-KV4-M_UVTfdIbG1358iDwAAzF__6Q3COBV0hJ646IPGucT5LSiouYJo8Y3WDHIlq9ITOyOqmoiWOxNSUM8pFY5xKar_cXb91nH7XDzE_E9x3dNrtWVb0Qo7FpBS5PNWkErY5fLw7ESVEg8fIj5eRPQZlZVSAe-c5NT5SW6Xk8sXyV2yf57eMb88Xabjm7isChHenRRNPuirUglujwZmT5-R_8vPqifcuNmttOrn2_i-k_-W6B5HcqEJ4WAs_njqXOdj8fs66XPyyamIIrJTC_S9x08OagS4yTzAP2fXu1XCBwAA">Open this model in Forge Studio</a></div>
+      <p class="fine">The model is <a href="https://github.com/mollendorff-ai/forge/blob/main/examples/questions/settlement.yaml"><code>settlement.yaml</code></a> in Forge’s examples.</p>
+    </section>
+
+    <section>
+      <h2>What it assumes</h2>
+      <ul>
+        <li>Every amount is what the claimant receives or pays; interest, tax and the time a trial takes are left out.</li>
+        <li>The other side’s better offer, if there is one, comes after you have spent the 15,000 and is final.</li>
+        <li>The chances are a lawyer’s guesses. Costs and who pays them differ with the court and the province: this is a model of the arithmetic, not legal advice.</li>
+      </ul>
+      <p class="fine">All figures are made up, for illustration. This is not financial, legal or tax advice.</p>
+    </section>
+
+    <section>
+      <h2>Other questions</h2>
+      <ul class="more">
+        <li><a href="/questions/salary-or-stock-options/">Higher salary or stock options: which job offer pays more?</a></li>
+        <li><a href="/questions/mortgage-or-tfsa/">Pay down the mortgage or put the money in a TFSA?</a></li>
+        <li><a href="/questions/food-truck-break-even/">How many meals a day does a food truck need to break even?</a></li>
+        <li><a href="/questions/match-a-price-cut/">A competitor cut prices: should I match?</a></li>
+      </ul>
+      <p>These pages are made with <a href="https://github.com/mollendorff-ai/forge">Forge</a>, an open-source engine that calculates financial models written as plain text. Each model is a file in <a href="https://github.com/mollendorff-ai/forge/tree/main/examples/questions">Forge’s examples</a>, and its figures are checked against calculations written outside Forge.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Möllendorff AI builds open-source tools for finance and AI agents. This is research and development, offered free and without warranty; it is not a service.</p>
+    <p>This page sets no cookies, runs no scripts and loads nothing from other sites.</p>
+  </footer>
+</div>
+</body>
+</html>
