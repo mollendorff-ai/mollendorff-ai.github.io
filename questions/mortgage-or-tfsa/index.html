@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pay down the mortgage or put the money in a TFSA? | Möllendorff AI</title>
+<meta name="description" content="300 a month for ten years, on a 4.79% Canadian mortgage or in a TFSA index fund: the fund is ahead in 59 futures out of 100. Open the model and change the return.">
+<link rel="canonical" href="https://mollendorff.ai/questions/mortgage-or-tfsa/">
+<link rel="alternate" hreflang="en" href="https://mollendorff.ai/questions/mortgage-or-tfsa/">
+<link rel="alternate" hreflang="fr" href="https://mollendorff.ai/fr/questions/hypotheque-ou-celi/">
+<link rel="alternate" hreflang="x-default" href="https://mollendorff.ai/questions/mortgage-or-tfsa/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mollendorff.ai/questions/mortgage-or-tfsa/">
+<meta property="og:title" content="Pay down the mortgage or put the money in a TFSA? | Möllendorff AI">
+<meta property="og:description" content="300 a month for ten years, on a 4.79% Canadian mortgage or in a TFSA index fund: the fund is ahead in 59 futures out of 100. Open the model and change the return.">
+<meta property="og:image" content="https://mollendorff.ai/img/card.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ECEFEB" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F1514" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/img/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<style>
+:root {
+  --bg: #ECEFEB; --paper: #FFFFFF; --ink: #162022; --muted: #55615E; --line: #D3D9D4;
+  --accent: #1E6B61; --accent-ink: #FFFFFF; --ember: #A24E1E; --result: #1E6B61; --margin: #F5F7F4;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #0F1514; --paper: #18201F; --ink: #E4EBE8; --muted: #9AA8A4; --line: #2A3532;
+          --accent: #5BBFAE; --accent-ink: #08201C; --ember: #E58C55; --result: #5BBFAE; --margin: #131A19; }
+}
+* { box-sizing: border-box }
+html { -webkit-text-size-adjust: 100% }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.55 }
+a { color: var(--accent); text-underline-offset: 3px }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px }
+.wrap { max-width: 720px; margin: 0 auto; padding: 0 20px }
+.top { display: flex; justify-content: space-between; align-items: baseline; padding: 24px 0 0; font-size: 16px }
+.top strong { font-size: 18px; letter-spacing: -0.01em }
+.top strong a { color: inherit; text-decoration: none }
+.top nav { display: flex; gap: 20px }
+.top nav a { color: var(--muted); text-decoration: none }
+.top nav a:hover { color: var(--ink) }
+.back { margin: 40px 0 0; font-size: 15px }
+h1, h2 { text-wrap: balance }
+h1 { font-size: clamp(30px, 6vw, 44px); line-height: 1.08; letter-spacing: -0.025em; margin: 12px 0 20px; font-weight: 750 }
+.lead { font-size: 20px; line-height: 1.45; margin: 0 0 28px }
+.stat { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; margin: 0 0 32px }
+.stat b { display: block; font-size: clamp(34px, 8vw, 52px); line-height: 1.05; letter-spacing: -0.03em; color: var(--result); font-variant-numeric: tabular-nums }
+.stat span { color: var(--muted) }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 0 0 8px }
+.btn { display: inline-block; padding: 13px 22px; border-radius: 10px; text-decoration: none; font-weight: 650; font-size: 16px; background: var(--accent); color: var(--accent-ink) }
+.btn:hover { filter: brightness(1.08) }
+.fine { margin: 10px 0 0; font-size: 14.5px; color: var(--muted) }
+section { padding: 34px 0 6px; border-top: 1px solid var(--line); margin-top: 34px }
+h2 { font-size: clamp(22px, 4vw, 27px); line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 14px }
+p { margin: 0 0 14px }
+ul { margin: 0 0 14px; padding-left: 1.2em }
+li { margin: 0 0 8px }
+table { border-collapse: collapse; width: 100%; margin: 0 0 14px; font-variant-numeric: tabular-nums }
+th, td { text-align: left; padding: 9px 0; border-top: 1px solid var(--line); vertical-align: top }
+td:last-child, th:last-child { text-align: right; white-space: nowrap; padding-left: 16px }
+th { font-weight: 600 }
+caption { text-align: left; color: var(--muted); font-size: 14.5px; padding-bottom: 6px }
+.more { display: grid; gap: 0; margin: 0 0 14px; padding: 0; list-style: none }
+.more li { padding: 12px 0; border-top: 1px solid var(--line); margin: 0 }
+.more li span { display: block; color: var(--muted); font-size: 15px }
+code { font-family: var(--mono); font-size: .88em; background: var(--paper); border: 1px solid var(--line); padding: 1px 6px; border-radius: 6px }
+footer { padding: 28px 0 56px; border-top: 1px solid var(--line); margin-top: 40px; color: var(--muted); font-size: 14.5px }
+footer p { margin: 0 0 6px }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <strong><a href="/">Möllendorff AI</a></strong>
+    <nav><a href="/fr/questions/hypotheque-ou-celi/" lang="fr" hreflang="fr">Français</a><a href="https://github.com/mollendorff-ai">GitHub</a></nav>
+  </div>
+
+  <main>
+    <p class="back"><a href="/questions/">← All five questions</a></p>
+    <h1>Pay down the mortgage or put the money in a TFSA?</h1>
+    <p class="lead">At a return of 6% a year the TFSA ends 2,793 ahead of paying down a 4.79% mortgage over ten years, which is little for the risk. The fund wins in 59 futures out of 100 and loses in 41, and one time in four it ends more than 5,000 behind.</p>
+    <div class="stat"><b>59 in 100</b><span>futures in which the TFSA ends ahead of the mortgage. In the other 41, paying down the mortgage was better.</span></div>
+    <div class="actions"><a class="btn" href="https://forge.mollendorff.ai/#name=mortgage_or_tfsa.yaml&amp;gzip=H4sIACQkCmsC_41VYW_bNhD9rl9xcBAsXmVF9uoUEboOQYF-21BsxfZh6ARaoi2iEumRVBT_-74jZdluurUBEkTU3bt37x5P5dbYnSwfpXXK6IJm62yZ5bPkit6LA9Vm0OQbSZ2xfid2koylfe_HMy0PpDQJ-vDuj4dfkPN7r_mA38on0e1b6Whr2lraAm-JQjGqRFv1rfCS_u2l86jrbo8FSmNLv3UiO4iupcVi3wp9lupU912ZyRWSfspzcANN33A6eanpIIV1KYE6DWiQT0HW4I_N0LKq8eqiY-Dc8HNrhCaznc6nuqFeSi-zV_fXVJlub3pdy5r8oCqJ-lwxJeEA9FZoUSvgbNUTIiwacSSsnKekPDnxiEelvbToLTCupPVCaTCD5qw0y1vLJ2BtUeUkfgBAIQ08stL3VpM2G1Mf6JM2gyvo7nrkQsITqwpOugaQwexP0nAJ8LA8a2c6OUAYdGG5KegifEo79Rh84MUnSWvaG1B2GZAeApUfHO3AOTQGDvCK4GZRDAQaQCJgstPUrXIcCxBI11de1inK8yAAEt4xzNFbnallm9FD20LJXW-jitSJWlK_z5KkagzELxKivbRlcEDBdsBB6LKgZZ4kRxYcJ7TuRVvySArKs_zlq3uKP1eYnes7nqgB_7YmaBJ5gHsHtbUcXMKBH-Kt8E17CMMNgk2ecAzAaU52ahELhjDkjlmxfkLR72x13Mifb5b04pwg3dJqTv8Qzm_pbk4LWs7GzgBRGee_G2J1TCbqtfIIvY5PGIaETNzRaCdmHkzX9ZjXRrIVoqOShO9dMUnAURjy0UaR1xEm2i2IN1ruRD2GRPKPou3jKO6-Qu-stV_fZr_hSbQ3HJtyxno-O9f0DPVLSS4KT5ouV6Ooidh63l0jmHsGEo2WxavzIxK58B5rpFT6v4InSyIhwka24xprzYCAzeFZ-rs_b6adc-6XdERJafFlhfnFMP9iN15u8wFXB0saw-JGz9YANh2vT0TK4w4FFM-5HJDdfI1d2L6Xqn-LWwAUjRT1M8BTLczimTozvr5YHmWFARpOVmhAhE8C3-48XHYnZV3QKl-xhxx_kJTeFYQviNJlcwCXqt_w_TO9x2dtnO8C5rNKbFr4L-iSnWgmcSlwptRetazr38s8pTV-7_OP43vfYCnxsuDXszeUz1KavabFGrz43zeR4uzj_xUMzX-z4GfwVqoDwgcAAA">Open this model in Forge Studio</a></div>
+    <p class="fine">The model travels in the link, after the #, which no server receives: it opens and calculates in your browser, and nothing leaves your device.</p>
+
+    <section>
+      <h2>The two ways to use 300 a month</h2>
+      <p>You have 300 a month for ten years, 36,000 in all. Paid on the mortgage, it lowers what you owe, for certain: the loan is 4.79% fixed, and in Canada fixed rates compound twice a year, so the true yearly cost is 4.85%. Put in an index fund in a TFSA, it earns a return nobody knows, with no tax on the gains. Mortgage interest on a home is not deductible, so there is no tax on that side either.</p>
+      <p>The model takes the fund’s average yearly return over the ten years as 6%, give or take 5 points: usually between 1% and 11%.</p>
+    </section>
+
+    <section>
+      <h2>How sure is the answer?</h2>
+      <p>Sure that the choice is a bet, not sure who wins it. At a return of exactly 6% the TFSA ends with 48,742 and the mortgage is 45,949 lower, so the TFSA is ahead by 2,793. Spread the return over 10,000 futures and the gap goes from about 10,700 behind in a bad tenth of them (−10,665) to 22,100 ahead in a good tenth.</p>
+      <p>The mortgage’s side never moves: it is the return of a risk-free investment at 4.85%. The more the fund’s average return is above that, the more it wins, and the model says nothing about what returns to expect. That is the part you must supply.</p>
+    </section>
+
+    <section>
+      <h2>The figures</h2>
+      <table>
+        <caption>After ten years of 300 a month</caption>
+        <tr><td>Paid in</td><td>36,000</td></tr>
+        <tr><td>Mortgage lower by, certain</td><td>45,949</td></tr>
+        <tr><td>TFSA at a 6% return</td><td>48,742</td></tr>
+        <tr><td>TFSA ahead, at a 6% return</td><td>2,793</td></tr>
+        <tr><td>TFSA ahead, average of 10,000 futures</td><td>4,576</td></tr>
+        <tr><td>Futures in which the TFSA is ahead</td><td>59%</td></tr>
+        <tr><td>TFSA more than 5,000 behind</td><td>25%</td></tr>
+        <tr><td>TFSA ahead by more than 10,000</td><td>30%</td></tr>
+        <tr><td>A bad tenth of futures: behind by</td><td>10,665</td></tr>
+        <tr><td>A good tenth of futures: ahead by</td><td>22,065</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Change it and see</h2>
+      <ul>
+        <li>Change the fund’s return (<code>MC.Normal(0.06, 0.05)</code> in the YAML view): at what average return does the fund win in nine futures out of ten?</li>
+        <li>Change the mortgage rate and see the certain side move.</li>
+        <li>Make the ten years five, which is a normal mortgage term, and watch the fund’s range widen.</li>
+      </ul>
+      <div class="actions"><a class="btn" href="https://forge.mollendorff.ai/#name=mortgage_or_tfsa.yaml&amp;gzip=H4sIACQkCmsC_41VYW_bNhD9rl9xcBAsXmVF9uoUEboOQYF-21BsxfZh6ARaoi2iEumRVBT_-74jZdluurUBEkTU3bt37x5P5dbYnSwfpXXK6IJm62yZ5bPkit6LA9Vm0OQbSZ2xfid2koylfe_HMy0PpDQJ-vDuj4dfkPN7r_mA38on0e1b6Whr2lraAm-JQjGqRFv1rfCS_u2l86jrbo8FSmNLv3UiO4iupcVi3wp9lupU912ZyRWSfspzcANN33A6eanpIIV1KYE6DWiQT0HW4I_N0LKq8eqiY-Dc8HNrhCaznc6nuqFeSi-zV_fXVJlub3pdy5r8oCqJ-lwxJeEA9FZoUSvgbNUTIiwacSSsnKekPDnxiEelvbToLTCupPVCaTCD5qw0y1vLJ2BtUeUkfgBAIQ08stL3VpM2G1Mf6JM2gyvo7nrkQsITqwpOugaQwexP0nAJ8LA8a2c6OUAYdGG5KegifEo79Rh84MUnSWvaG1B2GZAeApUfHO3AOTQGDvCK4GZRDAQaQCJgstPUrXIcCxBI11de1inK8yAAEt4xzNFbnallm9FD20LJXW-jitSJWlK_z5KkagzELxKivbRlcEDBdsBB6LKgZZ4kRxYcJ7TuRVvySArKs_zlq3uKP1eYnes7nqgB_7YmaBJ5gHsHtbUcXMKBH-Kt8E17CMMNgk2ecAzAaU52ahELhjDkjlmxfkLR72x13Mifb5b04pwg3dJqTv8Qzm_pbk4LWs7GzgBRGee_G2J1TCbqtfIIvY5PGIaETNzRaCdmHkzX9ZjXRrIVoqOShO9dMUnAURjy0UaR1xEm2i2IN1ruRD2GRPKPou3jKO6-Qu-stV_fZr_hSbQ3HJtyxno-O9f0DPVLSS4KT5ouV6Ooidh63l0jmHsGEo2WxavzIxK58B5rpFT6v4InSyIhwka24xprzYCAzeFZ-rs_b6adc-6XdERJafFlhfnFMP9iN15u8wFXB0saw-JGz9YANh2vT0TK4w4FFM-5HJDdfI1d2L6Xqn-LWwAUjRT1M8BTLczimTozvr5YHmWFARpOVmhAhE8C3-48XHYnZV3QKl-xhxx_kJTeFYQviNJlcwCXqt_w_TO9x2dtnO8C5rNKbFr4L-iSnWgmcSlwptRetazr38s8pTV-7_OP43vfYCnxsuDXszeUz1KavabFGrz43zeR4uzj_xUMzX-z4GfwVqoDwgcAAA">Open this model in Forge Studio</a></div>
+      <p class="fine">The model is <a href="https://github.com/mollendorff-ai/forge/blob/main/examples/questions/mortgage_or_tfsa.yaml"><code>mortgage_or_tfsa.yaml</code></a> in Forge’s examples, built on <a href="https://github.com/mollendorff-ai/forge/tree/main/examples/mortgage">its mortgage example</a>.</p>
+    </section>
+
+    <section>
+      <h2>What it assumes</h2>
+      <ul>
+        <li>The mortgage rate stays 4.79% for the ten years. In practice a term renews every five at the rate of the day.</li>
+        <li>The return is the fund’s average over the ten years, after fees, and the TFSA has room for the money.</li>
+        <li>Nothing is kept aside for an emergency: money paid on a mortgage cannot be taken back, and money in a TFSA can.</li>
+      </ul>
+      <p class="fine">All figures are made up, for illustration. This is not financial, legal or tax advice.</p>
+    </section>
+
+    <section>
+      <h2>Other questions</h2>
+      <ul class="more">
+        <li><a href="/questions/salary-or-stock-options/">Higher salary or stock options: which job offer pays more?</a></li>
+        <li><a href="/questions/food-truck-break-even/">How many meals a day does a food truck need to break even?</a></li>
+        <li><a href="/questions/match-a-price-cut/">A competitor cut prices: should I match?</a></li>
+        <li><a href="/questions/settle-or-go-to-court/">Accept the settlement offer or go to court?</a></li>
+      </ul>
+      <p>These pages are made with <a href="https://github.com/mollendorff-ai/forge">Forge</a>, an open-source engine that calculates financial models written as plain text. Each model is a file in <a href="https://github.com/mollendorff-ai/forge/tree/main/examples/questions">Forge’s examples</a>, and its figures are checked against calculations written outside Forge.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Möllendorff AI builds open-source tools for finance and AI agents. This is research and development, offered free and without warranty; it is not a service.</p>
+    <p>This page sets no cookies, runs no scripts and loads nothing from other sites.</p>
+  </footer>
+</div>
+</body>
+</html>

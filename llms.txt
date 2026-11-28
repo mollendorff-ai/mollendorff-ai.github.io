@@ -16,6 +16,16 @@
 - Four ways to use Forge, from a person alone to an AI pipeline (an agent writes the model, Forge validates and calculates, a person reviews), with the commands: https://github.com/mollendorff-ai/forge/blob/main/docs/WORKFLOWS.md
 - What works and what does not yet: https://github.com/mollendorff-ai/forge#status-and-known-limitations
 
+## Questions, answered with a model you can open
+
+Five pages, each a question people ask, answered with a range, a chance or a choice, and a Forge model that opens in Forge Studio from the link on the page (the model travels after the #, so it stays in the browser). English, and French at /fr/questions/.
+
+- Higher salary or stock options: https://mollendorff.ai/questions/salary-or-stock-options/
+- Pay down the mortgage or put the money in a TFSA: https://mollendorff.ai/questions/mortgage-or-tfsa/
+- How many meals a day does a food truck need to break even: https://mollendorff.ai/questions/food-truck-break-even/
+- A competitor cut prices, should I match: https://mollendorff.ai/questions/match-a-price-cut/
+- Accept the settlement offer or go to court: https://mollendorff.ai/questions/settle-or-go-to-court/
+
 ## Also
 
 - Ref: https://github.com/mollendorff-ai/ref turns a web page into clean JSON for an AI agent.

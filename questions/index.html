@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Five questions where one number is the wrong answer | Möllendorff AI</title>
+<meta name="description" content="A job offer, a mortgage, a food truck, a rival’s price cut and a settlement offer: five questions people ask, answered with a range, a chance or a choice, each in a model you can open and change in your browser.">
+<link rel="canonical" href="https://mollendorff.ai/questions/">
+<link rel="alternate" hreflang="en" href="https://mollendorff.ai/questions/">
+<link rel="alternate" hreflang="fr" href="https://mollendorff.ai/fr/questions/">
+<link rel="alternate" hreflang="x-default" href="https://mollendorff.ai/questions/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mollendorff.ai/questions/">
+<meta property="og:title" content="Five questions where one number is the wrong answer | Möllendorff AI">
+<meta property="og:description" content="A job offer, a mortgage, a food truck, a rival’s price cut and a settlement offer: five questions people ask, answered with a range, a chance or a choice, each in a model you can open and change in your browser.">
+<meta property="og:image" content="https://mollendorff.ai/img/card.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ECEFEB" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F1514" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/img/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<style>
+:root {
+  --bg: #ECEFEB; --paper: #FFFFFF; --ink: #162022; --muted: #55615E; --line: #D3D9D4;
+  --accent: #1E6B61; --accent-ink: #FFFFFF; --ember: #A24E1E; --result: #1E6B61; --margin: #F5F7F4;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #0F1514; --paper: #18201F; --ink: #E4EBE8; --muted: #9AA8A4; --line: #2A3532;
+          --accent: #5BBFAE; --accent-ink: #08201C; --ember: #E58C55; --result: #5BBFAE; --margin: #131A19; }
+}
+* { box-sizing: border-box }
+html { -webkit-text-size-adjust: 100% }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.55 }
+a { color: var(--accent); text-underline-offset: 3px }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px }
+.wrap { max-width: 720px; margin: 0 auto; padding: 0 20px }
+.top { display: flex; justify-content: space-between; align-items: baseline; padding: 24px 0 0; font-size: 16px }
+.top strong { font-size: 18px; letter-spacing: -0.01em }
+.top strong a { color: inherit; text-decoration: none }
+.top nav { display: flex; gap: 20px }
+.top nav a { color: var(--muted); text-decoration: none }
+.top nav a:hover { color: var(--ink) }
+.back { margin: 40px 0 0; font-size: 15px }
+h1, h2 { text-wrap: balance }
+h1 { font-size: clamp(30px, 6vw, 44px); line-height: 1.08; letter-spacing: -0.025em; margin: 12px 0 20px; font-weight: 750 }
+.lead { font-size: 20px; line-height: 1.45; margin: 0 0 28px }
+.stat { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; margin: 0 0 32px }
+.stat b { display: block; font-size: clamp(34px, 8vw, 52px); line-height: 1.05; letter-spacing: -0.03em; color: var(--result); font-variant-numeric: tabular-nums }
+.stat span { color: var(--muted) }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 0 0 8px }
+.btn { display: inline-block; padding: 13px 22px; border-radius: 10px; text-decoration: none; font-weight: 650; font-size: 16px; background: var(--accent); color: var(--accent-ink) }
+.btn:hover { filter: brightness(1.08) }
+.fine { margin: 10px 0 0; font-size: 14.5px; color: var(--muted) }
+section { padding: 34px 0 6px; border-top: 1px solid var(--line); margin-top: 34px }
+h2 { font-size: clamp(22px, 4vw, 27px); line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 14px }
+p { margin: 0 0 14px }
+ul { margin: 0 0 14px; padding-left: 1.2em }
+li { margin: 0 0 8px }
+table { border-collapse: collapse; width: 100%; margin: 0 0 14px; font-variant-numeric: tabular-nums }
+th, td { text-align: left; padding: 9px 0; border-top: 1px solid var(--line); vertical-align: top }
+td:last-child, th:last-child { text-align: right; white-space: nowrap; padding-left: 16px }
+th { font-weight: 600 }
+caption { text-align: left; color: var(--muted); font-size: 14.5px; padding-bottom: 6px }
+.more { display: grid; gap: 0; margin: 0 0 14px; padding: 0; list-style: none }
+.more li { padding: 12px 0; border-top: 1px solid var(--line); margin: 0 }
+.more li span { display: block; color: var(--muted); font-size: 15px }
+code { font-family: var(--mono); font-size: .88em; background: var(--paper); border: 1px solid var(--line); padding: 1px 6px; border-radius: 6px }
+footer { padding: 28px 0 56px; border-top: 1px solid var(--line); margin-top: 40px; color: var(--muted); font-size: 14.5px }
+footer p { margin: 0 0 6px }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <strong><a href="/">Möllendorff AI</a></strong>
+    <nav><a href="/fr/questions/" lang="fr" hreflang="fr">Français</a><a href="https://github.com/mollendorff-ai">GitHub</a></nav>
+  </div>
+
+  <main>
+    <h1>Five questions where one number is the wrong answer.</h1>
+    <p class="lead">A calculator gives one number. These questions have a range, a chance, a rival or a choice in turn behind them. Each page gives the answer, how sure it is, and the model itself, to open and change in your browser.</p>
+    <ul class="more">
+      <li><a href="/questions/salary-or-stock-options/">Higher salary or stock options: which job offer pays more?</a><span>By the recruiter’s story the options are worth 388,750. In 85 futures out of 100 they are worth nothing.</span></li>
+      <li><a href="/questions/mortgage-or-tfsa/">Pay down the mortgage or put the money in a TFSA?</a><span>At a 6% return the TFSA ends ahead by 2,793, but it is ahead in only 59 futures out of 100.</span></li>
+      <li><a href="/questions/food-truck-break-even/">How many meals a day does a food truck need to break even?</a><span>55.2 meals a day if the season goes to plan, but at that figure the truck makes money in only 28 seasons out of 100.</span></li>
+      <li><a href="/questions/match-a-price-cut/">A competitor cut prices: should I match?</a><span>Match when more than a quarter of your customers would leave. If you don’t know how many, matching pays in 66 futures out of 100.</span></li>
+      <li><a href="/questions/settle-or-go-to-court/">Accept the settlement offer or go to court?</a><span>Take the 40,000: refusing is worth 33,800 on average, and only wins above a 65.4% chance of winning.</span></li>
+    </ul>
+    <p>These pages are made with <a href="https://github.com/mollendorff-ai/forge">Forge</a>, an open-source engine that calculates financial models written as plain text. Each model is a file in <a href="https://github.com/mollendorff-ai/forge/tree/main/examples/questions">Forge’s examples</a>, and its figures are checked against calculations written outside Forge.</p>
+  </main>
+
+  <footer>
+    <p>Möllendorff AI builds open-source tools for finance and AI agents. This is research and development, offered free and without warranty; it is not a service.</p>
+    <p>This page sets no cookies, runs no scripts and loads nothing from other sites.</p>
+  </footer>
+</div>
+</body>
+</html>

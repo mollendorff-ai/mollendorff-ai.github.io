@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Higher salary or stock options: which job offer pays more? | Möllendorff AI</title>
+<meta name="description" content="A startup offers 25,000 less a year and 25,000 options. By the recruiter’s story they are worth 388,750. Simulated, they are worth nothing in 85 futures out of 100. Open the model and change it.">
+<link rel="canonical" href="https://mollendorff.ai/questions/salary-or-stock-options/">
+<link rel="alternate" hreflang="en" href="https://mollendorff.ai/questions/salary-or-stock-options/">
+<link rel="alternate" hreflang="fr" href="https://mollendorff.ai/fr/questions/salaire-ou-options/">
+<link rel="alternate" hreflang="x-default" href="https://mollendorff.ai/questions/salary-or-stock-options/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mollendorff.ai/questions/salary-or-stock-options/">
+<meta property="og:title" content="Higher salary or stock options: which job offer pays more? | Möllendorff AI">
+<meta property="og:description" content="A startup offers 25,000 less a year and 25,000 options. By the recruiter’s story they are worth 388,750. Simulated, they are worth nothing in 85 futures out of 100. Open the model and change it.">
+<meta property="og:image" content="https://mollendorff.ai/img/card.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ECEFEB" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F1514" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/img/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<style>
+:root {
+  --bg: #ECEFEB; --paper: #FFFFFF; --ink: #162022; --muted: #55615E; --line: #D3D9D4;
+  --accent: #1E6B61; --accent-ink: #FFFFFF; --ember: #A24E1E; --result: #1E6B61; --margin: #F5F7F4;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #0F1514; --paper: #18201F; --ink: #E4EBE8; --muted: #9AA8A4; --line: #2A3532;
+          --accent: #5BBFAE; --accent-ink: #08201C; --ember: #E58C55; --result: #5BBFAE; --margin: #131A19; }
+}
+* { box-sizing: border-box }
+html { -webkit-text-size-adjust: 100% }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.55 }
+a { color: var(--accent); text-underline-offset: 3px }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px }
+.wrap { max-width: 720px; margin: 0 auto; padding: 0 20px }
+.top { display: flex; justify-content: space-between; align-items: baseline; padding: 24px 0 0; font-size: 16px }
+.top strong { font-size: 18px; letter-spacing: -0.01em }
+.top strong a { color: inherit; text-decoration: none }
+.top nav { display: flex; gap: 20px }
+.top nav a { color: var(--muted); text-decoration: none }
+.top nav a:hover { color: var(--ink) }
+.back { margin: 40px 0 0; font-size: 15px }
+h1, h2 { text-wrap: balance }
+h1 { font-size: clamp(30px, 6vw, 44px); line-height: 1.08; letter-spacing: -0.025em; margin: 12px 0 20px; font-weight: 750 }
+.lead { font-size: 20px; line-height: 1.45; margin: 0 0 28px }
+.stat { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; margin: 0 0 32px }
+.stat b { display: block; font-size: clamp(34px, 8vw, 52px); line-height: 1.05; letter-spacing: -0.03em; color: var(--result); font-variant-numeric: tabular-nums }
+.stat span { color: var(--muted) }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 0 0 8px }
+.btn { display: inline-block; padding: 13px 22px; border-radius: 10px; text-decoration: none; font-weight: 650; font-size: 16px; background: var(--accent); color: var(--accent-ink) }
+.btn:hover { filter: brightness(1.08) }
+.fine { margin: 10px 0 0; font-size: 14.5px; color: var(--muted) }
+section { padding: 34px 0 6px; border-top: 1px solid var(--line); margin-top: 34px }
+h2 { font-size: clamp(22px, 4vw, 27px); line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 14px }
+p { margin: 0 0 14px }
+ul { margin: 0 0 14px; padding-left: 1.2em }
+li { margin: 0 0 8px }
+table { border-collapse: collapse; width: 100%; margin: 0 0 14px; font-variant-numeric: tabular-nums }
+th, td { text-align: left; padding: 9px 0; border-top: 1px solid var(--line); vertical-align: top }
+td:last-child, th:last-child { text-align: right; white-space: nowrap; padding-left: 16px }
+th { font-weight: 600 }
+caption { text-align: left; color: var(--muted); font-size: 14.5px; padding-bottom: 6px }
+.more { display: grid; gap: 0; margin: 0 0 14px; padding: 0; list-style: none }
+.more li { padding: 12px 0; border-top: 1px solid var(--line); margin: 0 }
+.more li span { display: block; color: var(--muted); font-size: 15px }
+code { font-family: var(--mono); font-size: .88em; background: var(--paper); border: 1px solid var(--line); padding: 1px 6px; border-radius: 6px }
+footer { padding: 28px 0 56px; border-top: 1px solid var(--line); margin-top: 40px; color: var(--muted); font-size: 14.5px }
+footer p { margin: 0 0 6px }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <strong><a href="/">Möllendorff AI</a></strong>
+    <nav><a href="/fr/questions/salaire-ou-options/" lang="fr" hreflang="fr">Français</a><a href="https://github.com/mollendorff-ai">GitHub</a></nav>
+  </div>
+
+  <main>
+    <p class="back"><a href="/questions/">← All five questions</a></p>
+    <h1>Higher salary or stock options: which job offer pays more?</h1>
+    <p class="lead">Take the salary, unless you can afford to lose it. By the recruiter’s story (the company sells for 300 million) the options are worth 388,750 against the 100,000 of pay you give up. But that is one future out of many, and in most of them the options pay nothing.</p>
+    <div class="stat"><b>85 in 100</b><span>futures in which the options are worth nothing, and the 100,000 of salary you gave up is gone.</span></div>
+    <div class="actions"><a class="btn" href="https://forge.mollendorff.ai/#name=job_offer.yaml&amp;gzip=H4sIACQkCmsC_4VVTW_bRhC981cMZAS1A5mh7CpNCKRF0B56yaUw0AJFQKzIkbjxcpfdXVomgvz3vv2QzNRtyoMkLmfevHlvhmr2xh64eWDrpNE1rbblpqxWxQX9Kg89W3JCCTuTwS9v2nsyo0egq-nYy7anT2ZHZr9H4ChmR4Ox_BOSf5s0SU2-Z-JHMYyKHe2N6tjWeEoUq1IrVDsp4Zn-mthF3FcAbCJgOYtB0fX1qIRe5Dg5fDuluED03dEkWq6kO5BwXlg_jYnkzXZdVRUJmllYAjVHQnd0kA98fpjbBJTvhSc88WSgElhMNiZm5ECPpIutWm7tJD3b71xQy851PG7NMAo9AwtxDiqEVugWVQapFMpkjqkz3Ie4YyibaTvqTA1twUFYBs7RWN-TNr6X-kDexDII3u9D5R5Bbo3-9nwMCTlc0MEyQDsWqgTIe6VoLw8TgmPUIDqmaSyLIipXF5TNbw5irCFM0OV0XSSCoS5YQJcwCOcRWGdxARGlqul7enZdpOwk9EJhnDpOecg_z1usHzh5K-8Z9-WCzgJwtLIF7B4UohI06S6hZqyiyIbEDqNYNW2qdC3RGGzmDBIGJKVD7k7MSLVCOu7qYOSz1FBN6tCTsY4OHJSCqTuBDdox7A-Is9FYD-W4CCm_n_TM7JbDUp-9dvKRvBxgWVgv1kFpNwhYCa94HZFgtDGgq-EDBi1UgRwBGgOBCH6UvnkQauKgAFH6ee6jioeoGsYRb4R3H34uf5Gutez58nO1pm2OWz-lrGlzOq2-rOlzVb7GWVVim_C5uQmf1e2Xq1UkGKc9ypp5nVqOuxa22y7U8-KeT6LFOUejgOmkmoIfX_VQlbfbeD9p6cH9xepfmrmzUugD7u0lGEaet5HntgLBAvMwKX8ejiYOVP0M5_0fl0jNzMsnTen6fJgm5Ipe0uVmcXxifkWvzmdpDldPA780aFE2vedOS_OSMo0FUxRKQWlRouSnPcYbTjfT-B-oT9sO4PxCDVu4ZCV6Ft3z_CVnEPhHPYg6GO25aYVVJmSHl6TIi73JM-c4bNNNdfM6MsafBga-DuMgddPPI9t22gXnzeTHybvE4hrWw8-dgvvJufIrNkVayZDN2ksVlv3PLSR7A8vf4vvtDx9zjO8B0GPlQsjqR6pWH_-vRJTjG-l_A2JrE0BfBwAA">Open this model in Forge Studio</a></div>
+    <p class="fine">The model travels in the link, after the #, which no server receives: it opens and calculates in your browser, and nothing leaves your device.</p>
+
+    <section>
+      <h2>The two offers</h2>
+      <p>A startup pays 25,000 a year less than another employer and gives you 25,000 options, which vest over four years. Each option lets you buy a share for $2. The company has 10,000,000 shares. Its investors put in 30,000,000 and get that back first when the company is sold, and later investors will take between 20% and 50% of the company before then, most likely 35%.</p>
+      <p>How is the company sold? In this model, 60 times in a hundred it fails and brings nothing; 25 times it sells for 50,000,000; 12 times for 300,000,000; 3 times for 1,500,000,000. Those chances are made up, and they are the first thing to change.</p>
+    </section>
+
+    <section>
+      <h2>How sure is the answer?</h2>
+      <p>Fairly sure about the shape, not about the numbers. Run through 10,000 simulated futures, the options are worth 116,519 on average, only about 16,500 more than the salary you gave up. That average hides two very different results: in 85 futures out of 100 you are 100,000 behind, and in the other 15 you are ahead by 187,500 or more, in the luckiest by about 2,700,000.</p>
+      <p>Even a sale at 50,000,000, which a quarter of the companies in this model reach, pays nothing: after the investors take their 30,000,000 and later investors take their share, each share is worth less than the $2 you must pay for it.</p>
+      <p>What matters most is the price the company sells for, by far; how much later investors take hardly matters at all.</p>
+    </section>
+
+    <section>
+      <h2>The figures</h2>
+      <table>
+        <caption>The startup’s options against the salary given up, over four years</caption>
+        <tr><td>Options, by the recruiter’s story (a sale at 300 million)</td><td>388,750</td></tr>
+        <tr><td>Salary given up, four years</td><td>100,000</td></tr>
+        <tr><td>Options, average of 10,000 simulated futures</td><td>116,519</td></tr>
+        <tr><td>Options, the usual future (the median)</td><td>0</td></tr>
+        <tr><td>Futures in which the options are worth anything</td><td>15%</td></tr>
+        <tr><td>Luckiest of 10,000 futures</td><td>2,833,441</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Change it and see</h2>
+      <ul>
+        <li>Open the <b>YAML</b> view and change the chances in <code>MC.Discrete</code>: how likely would a sale at 300 million have to be for the options to win on average?</li>
+        <li>Change the strike, the number of options or the salary gap, and watch the range under <code>options_ahead</code> move.</li>
+        <li>Tap <b>Analyze</b> to run a simulation or a tornado on the model and see what matters most.</li>
+      </ul>
+      <div class="actions"><a class="btn" href="https://forge.mollendorff.ai/#name=job_offer.yaml&amp;gzip=H4sIACQkCmsC_4VVTW_bRhC981cMZAS1A5mh7CpNCKRF0B56yaUw0AJFQKzIkbjxcpfdXVomgvz3vv2QzNRtyoMkLmfevHlvhmr2xh64eWDrpNE1rbblpqxWxQX9Kg89W3JCCTuTwS9v2nsyo0egq-nYy7anT2ZHZr9H4ChmR4Ox_BOSf5s0SU2-Z-JHMYyKHe2N6tjWeEoUq1IrVDsp4Zn-mthF3FcAbCJgOYtB0fX1qIRe5Dg5fDuluED03dEkWq6kO5BwXlg_jYnkzXZdVRUJmllYAjVHQnd0kA98fpjbBJTvhSc88WSgElhMNiZm5ECPpIutWm7tJD3b71xQy851PG7NMAo9AwtxDiqEVugWVQapFMpkjqkz3Ie4YyibaTvqTA1twUFYBs7RWN-TNr6X-kDexDII3u9D5R5Bbo3-9nwMCTlc0MEyQDsWqgTIe6VoLw8TgmPUIDqmaSyLIipXF5TNbw5irCFM0OV0XSSCoS5YQJcwCOcRWGdxARGlqul7enZdpOwk9EJhnDpOecg_z1usHzh5K-8Z9-WCzgJwtLIF7B4UohI06S6hZqyiyIbEDqNYNW2qdC3RGGzmDBIGJKVD7k7MSLVCOu7qYOSz1FBN6tCTsY4OHJSCqTuBDdox7A-Is9FYD-W4CCm_n_TM7JbDUp-9dvKRvBxgWVgv1kFpNwhYCa94HZFgtDGgq-EDBi1UgRwBGgOBCH6UvnkQauKgAFH6ee6jioeoGsYRb4R3H34uf5Gutez58nO1pm2OWz-lrGlzOq2-rOlzVb7GWVVim_C5uQmf1e2Xq1UkGKc9ypp5nVqOuxa22y7U8-KeT6LFOUejgOmkmoIfX_VQlbfbeD9p6cH9xepfmrmzUugD7u0lGEaet5HntgLBAvMwKX8ejiYOVP0M5_0fl0jNzMsnTen6fJgm5Ipe0uVmcXxifkWvzmdpDldPA780aFE2vedOS_OSMo0FUxRKQWlRouSnPcYbTjfT-B-oT9sO4PxCDVu4ZCV6Ft3z_CVnEPhHPYg6GO25aYVVJmSHl6TIi73JM-c4bNNNdfM6MsafBga-DuMgddPPI9t22gXnzeTHybvE4hrWw8-dgvvJufIrNkVayZDN2ksVlv3PLSR7A8vf4vvtDx9zjO8B0GPlQsjqR6pWH_-vRJTjG-l_A2JrE0BfBwAA">Open this model in Forge Studio</a></div>
+      <p class="fine">The model is <a href="https://github.com/mollendorff-ai/forge/blob/main/examples/questions/job_offer.yaml"><code>job_offer.yaml</code></a> in Forge’s examples.</p>
+    </section>
+
+    <section>
+      <h2>What it assumes</h2>
+      <ul>
+        <li>The options are exercised and the shares sold the day the company is sold, and you stay the four years.</li>
+        <li>No tax, no costs of exercising, and nothing for the other benefits of either job.</li>
+        <li>The chances of each sale are the writer’s guesses, not data about startups.</li>
+      </ul>
+      <p class="fine">All figures are made up, for illustration. This is not financial, legal or tax advice.</p>
+    </section>
+
+    <section>
+      <h2>Other questions</h2>
+      <ul class="more">
+        <li><a href="/questions/mortgage-or-tfsa/">Pay down the mortgage or put the money in a TFSA?</a></li>
+        <li><a href="/questions/food-truck-break-even/">How many meals a day does a food truck need to break even?</a></li>
+        <li><a href="/questions/match-a-price-cut/">A competitor cut prices: should I match?</a></li>
+        <li><a href="/questions/settle-or-go-to-court/">Accept the settlement offer or go to court?</a></li>
+      </ul>
+      <p>These pages are made with <a href="https://github.com/mollendorff-ai/forge">Forge</a>, an open-source engine that calculates financial models written as plain text. Each model is a file in <a href="https://github.com/mollendorff-ai/forge/tree/main/examples/questions">Forge’s examples</a>, and its figures are checked against calculations written outside Forge.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Möllendorff AI builds open-source tools for finance and AI agents. This is research and development, offered free and without warranty; it is not a service.</p>
+    <p>This page sets no cookies, runs no scripts and loads nothing from other sites.</p>
+  </footer>
+</div>
+</body>
+</html>

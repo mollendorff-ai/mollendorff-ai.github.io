@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Un concurrent a baissé ses prix : faut-il suivre? | Möllendorff AI</title>
+<meta name="description" content="Suivez la baisse de prix de votre concurrent quand plus du quart de vos clients partiraient : la baisse divisée par ce que vous gagnez sur une vente. Si vous l’ignorez, suivre paie dans 66 futurs sur 100. Ouvrez le modèle.">
+<link rel="canonical" href="https://mollendorff.ai/fr/questions/suivre-une-baisse-de-prix/">
+<link rel="alternate" hreflang="en" href="https://mollendorff.ai/questions/match-a-price-cut/">
+<link rel="alternate" hreflang="fr" href="https://mollendorff.ai/fr/questions/suivre-une-baisse-de-prix/">
+<link rel="alternate" hreflang="x-default" href="https://mollendorff.ai/questions/match-a-price-cut/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mollendorff.ai/fr/questions/suivre-une-baisse-de-prix/">
+<meta property="og:title" content="Un concurrent a baissé ses prix : faut-il suivre? | Möllendorff AI">
+<meta property="og:description" content="Suivez la baisse de prix de votre concurrent quand plus du quart de vos clients partiraient : la baisse divisée par ce que vous gagnez sur une vente. Si vous l’ignorez, suivre paie dans 66 futurs sur 100. Ouvrez le modèle.">
+<meta property="og:image" content="https://mollendorff.ai/img/card.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ECEFEB" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F1514" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/img/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<style>
+:root {
+  --bg: #ECEFEB; --paper: #FFFFFF; --ink: #162022; --muted: #55615E; --line: #D3D9D4;
+  --accent: #1E6B61; --accent-ink: #FFFFFF; --ember: #A24E1E; --result: #1E6B61; --margin: #F5F7F4;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #0F1514; --paper: #18201F; --ink: #E4EBE8; --muted: #9AA8A4; --line: #2A3532;
+          --accent: #5BBFAE; --accent-ink: #08201C; --ember: #E58C55; --result: #5BBFAE; --margin: #131A19; }
+}
+* { box-sizing: border-box }
+html { -webkit-text-size-adjust: 100% }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.55 }
+a { color: var(--accent); text-underline-offset: 3px }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px }
+.wrap { max-width: 720px; margin: 0 auto; padding: 0 20px }
+.top { display: flex; justify-content: space-between; align-items: baseline; padding: 24px 0 0; font-size: 16px }
+.top strong { font-size: 18px; letter-spacing: -0.01em }
+.top strong a { color: inherit; text-decoration: none }
+.top nav { display: flex; gap: 20px }
+.top nav a { color: var(--muted); text-decoration: none }
+.top nav a:hover { color: var(--ink) }
+.back { margin: 40px 0 0; font-size: 15px }
+h1, h2 { text-wrap: balance }
+h1 { font-size: clamp(30px, 6vw, 44px); line-height: 1.08; letter-spacing: -0.025em; margin: 12px 0 20px; font-weight: 750 }
+.lead { font-size: 20px; line-height: 1.45; margin: 0 0 28px }
+.stat { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; margin: 0 0 32px }
+.stat b { display: block; font-size: clamp(34px, 8vw, 52px); line-height: 1.05; letter-spacing: -0.03em; color: var(--result); font-variant-numeric: tabular-nums }
+.stat span { color: var(--muted) }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 0 0 8px }
+.btn { display: inline-block; padding: 13px 22px; border-radius: 10px; text-decoration: none; font-weight: 650; font-size: 16px; background: var(--accent); color: var(--accent-ink) }
+.btn:hover { filter: brightness(1.08) }
+.fine { margin: 10px 0 0; font-size: 14.5px; color: var(--muted) }
+section { padding: 34px 0 6px; border-top: 1px solid var(--line); margin-top: 34px }
+h2 { font-size: clamp(22px, 4vw, 27px); line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 14px }
+p { margin: 0 0 14px }
+ul { margin: 0 0 14px; padding-left: 1.2em }
+li { margin: 0 0 8px }
+table { border-collapse: collapse; width: 100%; margin: 0 0 14px; font-variant-numeric: tabular-nums }
+th, td { text-align: left; padding: 9px 0; border-top: 1px solid var(--line); vertical-align: top }
+td:last-child, th:last-child { text-align: right; white-space: nowrap; padding-left: 16px }
+th { font-weight: 600 }
+caption { text-align: left; color: var(--muted); font-size: 14.5px; padding-bottom: 6px }
+.more { display: grid; gap: 0; margin: 0 0 14px; padding: 0; list-style: none }
+.more li { padding: 12px 0; border-top: 1px solid var(--line); margin: 0 }
+.more li span { display: block; color: var(--muted); font-size: 15px }
+code { font-family: var(--mono); font-size: .88em; background: var(--paper); border: 1px solid var(--line); padding: 1px 6px; border-radius: 6px }
+footer { padding: 28px 0 56px; border-top: 1px solid var(--line); margin-top: 40px; color: var(--muted); font-size: 14.5px }
+footer p { margin: 0 0 6px }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <strong><a href="/fr/">Möllendorff AI</a></strong>
+    <nav><a href="/questions/match-a-price-cut/" lang="en" hreflang="en">English</a><a href="https://github.com/mollendorff-ai">GitHub</a></nav>
+  </div>
+
+  <main>
+    <p class="back"><a href="/fr/questions/">← Les cinq questions</a></p>
+    <h1>Un concurrent a baissé ses prix : faut-il suivre?</h1>
+    <p class="lead">Suivez si plus du quart de vos clients partiraient si vous gardiez votre prix. Cette part, c’est la baisse divisée par ce que vous gagnez sur une vente (2 ÷ 8). En dessous, garder son prix rapporte plus. Au-dessus du tiers, la guerre de prix est certaine, et les deux commerces s’appauvrissent de 2 000 par mois.</p>
+    <div class="stat"><b>66 sur 100</b><span>futurs où suivre paie, quand la part des clients qui partiraient se situe entre 10 % et 50 %.</span></div>
+    <div class="actions"><a class="btn" href="https://forge.mollendorff.ai/#name=price_cut.yaml&amp;gzip=H4sIACQkCmsC_6VXUW_bNhB-1684JBjWdLaquE0auCiGvgzrwzBgKLCHYhAYibaISKRLUlGNof9935GSLMV2tqEGkigi-d13d9_d0fnG2K3MH6V1yug1XdykN2l2kVzSBypMs5NeeWOpaD3trCqkW5OrTFuX9JEa4YvqZ2z9o9WkNPlKkvwqml0tHW1MXUq7xipRsEGFqIu2Fl7Sl1Y6D3PuVcDMgZ7uRVPTclna_dK2enJsK5rzJ_7rPiC7QmphlaGNKh5qXnLeNPA7uQTKp86wYztHTtZ1cMUxoK-U3pLwtMoW1FWqqBAW5x1JgUez4Z0NXa9S-lRJ4Fj1KGoOlyOFn8CC7vckyEvtq5Q-bhC5CsGhZh-XF-TAg7HwZsKKaike5ZpWdxzc6wwEAARCgK2FTgPv37Uk3Tb30lIpC1VKl9JvnBemzV6EzIm9A3mpqTFWHmxQx5kcLGG70OOZUj0CrYwmJXJtt2DxYkWv6G4Bd760wnppr1L6oEveApiQAheNIWQPCitwy3krpY_MFQR0L2vTHSAWIRzMF-sRyOh6T_JLq2p1b1XbkIg2Ynh_dIFhJxxAGuW8eJDvSNyb4EOgD4zTDogNLI5OBndu2R2Qs-XVgt96psIhAwj7IR_7Ewa_EGYj3SIQuscLknhod7RaZFnGdAyyTDuDONt38NR3UrKa-bzvDA46AgqSHk4Pno9wg32BPI0BENEekwFUJXY7qTmUMcxBifLrThYQXFRkpJrSWAR5q11rZayFMcxB4X12OgXrQfYV2-4q06ui1Q_adBp5Rl1s1BYwLtBrRInVXZokXDjrhA7CWrNcMzp8LiNL3ojsOcEdog_WgqtrrLfAGFDhL7Sf4bnVyudcdYBdBTN4Ovm5nIkkFh-rgdfwrgVill5n4X9GRb_74SLhc59GzxFBMRCdVAri0QSBmaieSood1MAbARBClQeA9dza6u6JtSQqkbdx9uN2tLAGvRE73jNiGqkvA3w6-n8xhb7rI_HM-Zf04noAwdar5wFvk9D1Q1Lge18wQEY5yuhoWGOLrNX8PP1D3F72OClvnvOHQgaks36cAMLeOe2Io4LMRQ2u_w6FsPwUQzFJ3NV5G29v76IN9uJ_GFk-Z-QoIjdvb7Mk4SbqGD0WZrSDvl5YtfNhRv_K04NF2I-Pfj4rPxk04RTGxD5U4-cG20JZ_BUWAI2-tlU8zj8zj9D4-rV900gP5DV528pZdQkqeDrGBsI90mw2Q8uxpuPSjvVA_aKL9Hup09_xz_ugo3QU0SKWdP96GuVv_fGwPj89Sfj8_KCob0kitOv4EkLxrpJzV8_DoDhK34tJVpC3gxCuMCLOZQzlfXPUTIi08RzZMIcnc7efr8odOs2TURz7CDA6Yb-D51P5Zunr-ec85w_9FB1IzififB7Guw7PwyHA2JdvhdLuiPY8NUz8KNczyqs32ZTWnzzoBhOYJVaP84MM8-kHKYpBF3LCrhKunwC9H_lGWeefZTlR1kh01OqM5fL16pgmGw9GQjHwwGCP55xxk6zl5FLByK7Pe7hfPhfAIfWzkM6jF3vinNc4gWmrHjF_cWs50IFG44WER34M2OH6cdzrQmtKd7gL5IdtcwrDEM_ZJ-XyQlov4tw7hVWaRmmIq0wbeaLQpt5cR74zYYYCO6fOZLj7h7DWZi_qw_X_RIP9ReGWKMN3GkFVq0uLe-S8QNEn8X1G2LHBPW304abBzeHp141T9oz1--UGWfluk29ukn8AtupDx9MNAAA">Ouvrir ce modèle dans Forge Studio</a></div>
+    <p class="fine">Le modèle voyage dans le lien, après le #, qu’aucun serveur ne reçoit : il s’ouvre et se calcule dans votre navigateur, et rien ne quitte votre appareil.</p>
+
+    <section>
+      <h2>La rue</h2>
+      <p>Deux commerces vendent la même chose 20, ce qui coûte 12 à chacun, et chacun vend 1 000 par mois. Votre concurrent baisse son prix d’un dixième, à 18; une vente laisse donc 6 au lieu de 8. Si vous gardez votre prix, une partie de vos clients vont au commerce moins cher. Selon ce plan, 28 % d’entre eux.</p>
+      <p>Suivre rapporte 6 000 par mois. Garder son prix rapporte 5 760 (vous gardez 72 % des clients, à pleine marge). À 28 %, suivre rapporte donc 240 de plus par mois, un petit gain, et la rue a deux issues stables : les deux gardent leur prix à 8 000 chacun, ou les deux baissent à 6 000 chacun. Laquelle arrive dépend de ce que chacun attend de l’autre.</p>
+    </section>
+
+    <section>
+      <h2>Un seul chiffre décide</h2>
+      <p>Suivre paie quand la part des clients qui partiraient dépasse la baisse divisée par votre marge, 2 ÷ 8, un quart. Trois zones en découlent :</p>
+      <ul>
+        <li><b>En dessous du quart :</b> garder son prix est la seule issue stable. La baisse du concurrent était une erreur.</li>
+        <li><b>Entre le quart et le tiers :</b> les deux issues sont stables, et la rue peut aller dans un sens ou dans l’autre.</li>
+        <li><b>Au-dessus du tiers (2 ÷ 6) :</b> baisser son prix paie quoi que fasse l’autre; les deux baissent donc et chacun gagne 2 000 de moins par mois que si les deux avaient gardé leur prix. C’est la guerre de prix.</li>
+      </ul>
+      <p>Touchez <b>fickle_customers</b> (45 sur 100 partiraient) ou <b>loyal_customers</b> (15 sur 100) dans le modèle pour voir la rue passer d’une zone à l’autre.</p>
+    </section>
+
+    <section>
+      <h2>Quel est le degré de certitude?</h2>
+      <p>Certain des seuils, pas de la position de vos clients. Personne ne sait combien partiraient. Si c’est n’importe où entre 10 % et 50 %, le plus probablement 28 %, alors sur 5 000 futurs simulés suivre paie dans 66 sur 100, être le premier à baisser paierait dans 28, et la rue a deux issues stables dans 38.</p>
+      <p>La première chose à savoir, c’est combien de vos clients magasinent au prix seulement. La version incertaine du modèle est <a href="https://github.com/mollendorff-ai/forge/blob/main/examples/questions/price_cut_unsure.yaml"><code>price_cut_unsure.yaml</code></a>; lancez-y <code>forge simulate</code>.</p>
+    </section>
+
+    <section>
+      <h2>Les chiffres</h2>
+      <table>
+        <caption>Un mois pour chaque commerce, 1 000 clients chacun</caption>
+        <tr><td>Les deux gardent leur prix</td><td>8 000</td></tr>
+        <tr><td>Les deux baissent</td><td>6 000</td></tr>
+        <tr><td>Je baisse, le concurrent garde (28 % de ses clients viennent)</td><td>7 680</td></tr>
+        <tr><td>Je garde, le concurrent baisse (28 % des miens partent)</td><td>5 760</td></tr>
+        <tr><td>Suivre rapporte de plus que garder, à 28 %</td><td>240</td></tr>
+        <tr><td>Suivre paie au-delà de cette part de départs</td><td>25 %</td></tr>
+        <tr><td>Une guerre de prix est certaine au-delà de cette part</td><td>33,3 %</td></tr>
+        <tr><td>Coût d’une guerre de prix, chaque commerce, par mois</td><td>2 000</td></tr>
+        <tr><td>Futurs où suivre paie (part inconnue)</td><td>66 %</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Changez-le et voyez</h2>
+      <ul>
+        <li>Changez <code>leave_share</code> et regardez les équilibres changer au quart et au tiers.</li>
+        <li>Changez la baisse, le prix ou le coût, et voyez bouger les seuils : une baisse plus forte relève la part à partir de laquelle il faut suivre.</li>
+        <li>Ouvrez la vue <b>YAML</b> pour voir le jeu : ses gains sont des formules des prix et de la part qui part.</li>
+      </ul>
+      <div class="actions"><a class="btn" href="https://forge.mollendorff.ai/#name=price_cut.yaml&amp;gzip=H4sIACQkCmsC_6VXUW_bNhB-1684JBjWdLaquE0auCiGvgzrwzBgKLCHYhAYibaISKRLUlGNof9935GSLMV2tqEGkigi-d13d9_d0fnG2K3MH6V1yug1XdykN2l2kVzSBypMs5NeeWOpaD3trCqkW5OrTFuX9JEa4YvqZ2z9o9WkNPlKkvwqml0tHW1MXUq7xipRsEGFqIu2Fl7Sl1Y6D3PuVcDMgZ7uRVPTclna_dK2enJsK5rzJ_7rPiC7QmphlaGNKh5qXnLeNPA7uQTKp86wYztHTtZ1cMUxoK-U3pLwtMoW1FWqqBAW5x1JgUez4Z0NXa9S-lRJ4Fj1KGoOlyOFn8CC7vckyEvtq5Q-bhC5CsGhZh-XF-TAg7HwZsKKaike5ZpWdxzc6wwEAARCgK2FTgPv37Uk3Tb30lIpC1VKl9JvnBemzV6EzIm9A3mpqTFWHmxQx5kcLGG70OOZUj0CrYwmJXJtt2DxYkWv6G4Bd760wnppr1L6oEveApiQAheNIWQPCitwy3krpY_MFQR0L2vTHSAWIRzMF-sRyOh6T_JLq2p1b1XbkIg2Ynh_dIFhJxxAGuW8eJDvSNyb4EOgD4zTDogNLI5OBndu2R2Qs-XVgt96psIhAwj7IR_7Ewa_EGYj3SIQuscLknhod7RaZFnGdAyyTDuDONt38NR3UrKa-bzvDA46AgqSHk4Pno9wg32BPI0BENEekwFUJXY7qTmUMcxBifLrThYQXFRkpJrSWAR5q11rZayFMcxB4X12OgXrQfYV2-4q06ui1Q_adBp5Rl1s1BYwLtBrRInVXZokXDjrhA7CWrNcMzp8LiNL3ojsOcEdog_WgqtrrLfAGFDhL7Sf4bnVyudcdYBdBTN4Ovm5nIkkFh-rgdfwrgVill5n4X9GRb_74SLhc59GzxFBMRCdVAri0QSBmaieSood1MAbARBClQeA9dza6u6JtSQqkbdx9uN2tLAGvRE73jNiGqkvA3w6-n8xhb7rI_HM-Zf04noAwdar5wFvk9D1Q1Lge18wQEY5yuhoWGOLrNX8PP1D3F72OClvnvOHQgaks36cAMLeOe2Io4LMRQ2u_w6FsPwUQzFJ3NV5G29v76IN9uJ_GFk-Z-QoIjdvb7Mk4SbqGD0WZrSDvl5YtfNhRv_K04NF2I-Pfj4rPxk04RTGxD5U4-cG20JZ_BUWAI2-tlU8zj8zj9D4-rV900gP5DV528pZdQkqeDrGBsI90mw2Q8uxpuPSjvVA_aKL9Hup09_xz_ugo3QU0SKWdP96GuVv_fGwPj89Sfj8_KCob0kitOv4EkLxrpJzV8_DoDhK34tJVpC3gxCuMCLOZQzlfXPUTIi08RzZMIcnc7efr8odOs2TURz7CDA6Yb-D51P5Zunr-ec85w_9FB1IzififB7Guw7PwyHA2JdvhdLuiPY8NUz8KNczyqs32ZTWnzzoBhOYJVaP84MM8-kHKYpBF3LCrhKunwC9H_lGWeefZTlR1kh01OqM5fL16pgmGw9GQjHwwGCP55xxk6zl5FLByK7Pe7hfPhfAIfWzkM6jF3vinNc4gWmrHjF_cWs50IFG44WER34M2OH6cdzrQmtKd7gL5IdtcwrDEM_ZJ-XyQlov4tw7hVWaRmmIq0wbeaLQpt5cR74zYYYCO6fOZLj7h7DWZi_qw_X_RIP9ReGWKMN3GkFVq0uLe-S8QNEn8X1G2LHBPW304abBzeHp141T9oz1--UGWfluk29ukn8AtupDx9MNAAA">Ouvrir ce modèle dans Forge Studio</a></div>
+      <p class="fine">Le modèle est <a href="https://github.com/mollendorff-ai/forge/blob/main/examples/questions/price_cut.yaml"><code>price_cut.yaml</code></a>, dans les exemples de Forge.</p>
+    </section>
+
+    <section>
+      <h2>Ce que le modèle suppose</h2>
+      <ul>
+        <li>Les deux commerces sont identiques : mêmes coûts, mêmes prix, mêmes clients.</li>
+        <li>Les clients qui partent vont au commerce moins cher, et aucun ne revient.</li>
+        <li>Le jeu se joue une fois, pas mois après mois; un jeu répété peut rendre stable le fait de garder son prix même au-delà du tiers (les exemples de Forge ont le long jeu).</li>
+      </ul>
+      <p class="fine">Tous les chiffres sont inventés, pour illustrer. Ce n’est pas un conseil financier, juridique ou fiscal.</p>
+    </section>
+
+    <section>
+      <h2>Autres questions</h2>
+      <ul class="more">
+        <li><a href="/fr/questions/salaire-ou-options/">Salaire plus élevé ou options d’achat d’actions : quelle offre d’emploi vaut le plus ?</a></li>
+        <li><a href="/fr/questions/hypotheque-ou-celi/">Rembourser son hypothèque ou cotiser au CELI?</a></li>
+        <li><a href="/fr/questions/camion-de-rue-seuil-de-rentabilite/">Combien de repas par jour faut-il à un food truck pour être rentable?</a></li>
+        <li><a href="/fr/questions/regler-ou-aller-en-proces/">Accepter l’offre de règlement ou aller en procès?</a></li>
+      </ul>
+      <p>Ces pages sont faites avec <a href="https://github.com/mollendorff-ai/forge">Forge</a>, un moteur à code source ouvert qui calcule des modèles financiers écrits en texte brut. Chaque modèle est un fichier dans <a href="https://github.com/mollendorff-ai/forge/tree/main/examples/questions">les exemples de Forge</a> (en anglais), et ses chiffres sont vérifiés par des calculs écrits hors de Forge.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Möllendorff AI crée des outils à code source ouvert pour la finance et les agents d’IA. Il s’agit de recherche et développement, offerts gratuitement et sans garantie; ce n’est pas un service.</p>
+    <p>Cette page n’installe aucun témoin, n’exécute aucun script et ne charge rien d’autres sites.</p>
+  </footer>
+</div>
+</body>
+</html>
